@@ -16,4 +16,17 @@ public class SpaceShipModel extends GameModel{
         life = 3;
         IMMUNITY = 300;
     }
+    @Override
+    public void getDamage(){
+       if(immunity > 0){
+            return;
+        }
+        else{
+            if(life > 0){                            
+                life--;
+                Player.getInstance().removeLife();
+                immunity = IMMUNITY;
+            }
+        } 
+    }
 }

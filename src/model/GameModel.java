@@ -16,8 +16,7 @@ public class GameModel {
     protected int life;
     protected int IMMUNITY;
     protected int immunity;
-    protected int rateo;
-    protected int velocity;
+
     
     public GameModel(){
     }
@@ -43,5 +42,10 @@ public class GameModel {
     }
     public void immunityTimer(){
         if(immunity>0)immunity--;
+    }
+    public boolean flicker(){
+        if(immunity>0)return true;
+        else
+            return false;
     }
 }

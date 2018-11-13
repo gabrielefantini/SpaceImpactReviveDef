@@ -10,11 +10,13 @@ package model;
  * @author gabri
  */
 public class Player {
+    private int life;
     private int score;
     private static Player instance = null;
     
     private Player(){
         score = 0;
+        life=3;
     }
     public static Player getInstance(){
         if(instance == null)instance = new Player();
@@ -22,5 +24,10 @@ public class Player {
     }
     public void score(){
         score++;
+    }    
+    
+    public void removeLife() {
+        if(life==1)SpaceImpactRevive.gameOver();
+        life--;
     }
 }

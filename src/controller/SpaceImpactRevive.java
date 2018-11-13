@@ -77,6 +77,7 @@ public class SpaceImpactRevive extends AnimationTimer{
             for(int i = 0; i < array.size(); i++){
                 GameObject g = array.get(i);
                 g.animationLoop();
+                g.flicker();
             }
        }
     }
@@ -84,7 +85,7 @@ public class SpaceImpactRevive extends AnimationTimer{
         if(!array.isEmpty()){
             for(int i = 0; i < array.size(); i++){
                 GameObject g =array.get(i);
-                if(g.check()){
+                if(g.daDistruggere()){
                     g.die();
                     array.remove(g);
                 }
@@ -97,49 +98,14 @@ public class SpaceImpactRevive extends AnimationTimer{
         StatusBar.getInstance().score(getScore());
     }
     public void collisionCheck(GameObject a, GameObject b){
-        if(a.getBounds().intersects(b.getBounds()) && !a.getClass().isInstance(b) && !(a instanceof BackgroundModel) && !(b instanceof BackgroundModel)){
+        if(a.intersects(b) && a.getType()!= b.getType()){
             a.collide();
             b.collide();
-            if(a instanceof EnemyModel || b instanceof EnemyModel)//un nemico è stato colpito da qualcosa e quindi ottengo un punto
+            if(a.getType()=="Enemy" || b.getType()=="Enemy")//un nemico è stato colpito da qualcosa e quindi ottengo un punto
                 score();
         }
-    }  
-    public int getLife(){
-        for(int i = 0; i < GameModel.getInstance().getSize(); i++){
-            GameObject g = GameModel.getInstance().get(i);
-            if(g instanceof SpaceShipModel)return g.getLife();
-        }
-        return 0;
     }
-    public void removeLife(){
-        for(int i = 0; i < GameModel.getInstance().getSize(); i++){
-            GameObject g = GameModel.getInstance().get(i);
-            if(g instanceof SpaceShipModel)g.getDamage();
-        }
-        StatusBar.getInstance().removeLife();
-        for(int i = 0;i<getLife();i++)
-                StatusBar.getInstance().addLife();
-    }
- 
-    public void fire(int direction,GameObject g){
-        System.out.println("fire");
-        int x = 0;
-        int y=0; 
-        if(direction >0){
-            x = (int)g.getBounds().getMaxX()+1;
-            y = (int)((int)g.getBounds().getMaxY()-g.getBounds().getHeight()/2);
-            ProjectileDxModel p = new ProjectileDxModel();
-            GameModel.getInstance().add(p);
-            p.upBounds(new BoundingBox(x, y, 0, 0));
-            
-        }
-        if(direction <=0){
-            x = (int)g.getBounds().getMinX()- 30;
-            y = (int) ((int)g.getBounds().getMinY()+ g.getBounds().getHeight()/2);
-            ProjectileSxModel p = new ProjectileSxModel();
-            GameModel.getInstance().add(p);
-            p.upBounds(new BoundingBox(x, y, 0, 0));
-        }
-        
+    public void GameOver(){
+        this.stop();
     }
 }

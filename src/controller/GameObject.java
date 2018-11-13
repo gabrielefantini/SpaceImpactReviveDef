@@ -48,10 +48,30 @@ public class GameObject {
     public void animationLoop(){
         this.view.animationLoop();
     }
-    public boolean check(){
+    public boolean daDistruggere(){
         if(model.getLife()<= 0 || view.outOfSpace())
             return true;
         else
             return false;
+    }
+    public boolean intersect(GameObject b){
+        if(this.view.getBounds().intersect(b.returnView().getBounds()))return true;
+        else 
+            return false;
+    }
+    public GameView returnView(){
+        return this.view;
+    }
+    public GameModel returnModel(){
+        return this.model;
+    }
+    public void collide(){
+        model.collide();
+    }
+    public void flicker(){
+        if(model.flicker())
+            view.flicker();
+        if(!model.flicker())
+            view.stopFlicker();
     }
 }

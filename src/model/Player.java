@@ -5,6 +5,8 @@
  */
 package model;
 
+import controller.SpaceImpactRevive;
+
 /**
  *
  * @author gabri
@@ -25,9 +27,11 @@ public class Player {
     public void score(){
         score++;
     }    
-    
+    public int getScore(){
+        return score;
+    }
     public void removeLife() {
-        if(life==1)SpaceImpactRevive.gameOver();
+        if(life==1)SpaceImpactRevive.getInstance().GameOver();
         life--;
     }
 }

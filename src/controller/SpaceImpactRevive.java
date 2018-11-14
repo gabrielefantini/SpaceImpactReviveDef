@@ -29,8 +29,6 @@ public class SpaceImpactRevive extends AnimationTimer{
     
     private SpaceImpactRevive(){
         this.array = new ArrayList<GameObject>();
-        for(int i = 0;i<getLife();i++)
-                StatusBar.getInstance().addLife();
         rateo = 0;
     }
     
@@ -39,7 +37,10 @@ public class SpaceImpactRevive extends AnimationTimer{
         return instance;
     }
     
-    
+     public void add(GameObject g){
+        array.add(g);
+    }
+     
     @Override
     public void handle(long now) {
         gameLoop();
@@ -52,7 +53,7 @@ public class SpaceImpactRevive extends AnimationTimer{
     }
     
     public void sync(){
-        //verifica se i bounds del model, aggiornati, collidono tramite il metodo collisionCheck 
+        //verifica se gli oggetti collidono tramite il metodo collisionCheck e dai al model degli oggetti il timer
         for(int i = 0; i < array.size(); i++){
             GameObject g = array.get(i);
             for(int l = 0; l < array.size(); l++){
@@ -60,19 +61,11 @@ public class SpaceImpactRevive extends AnimationTimer{
                 if(!g.equals(f))
                     collisionCheck(g,f);
             }
-            if(g.getType() == "SpaceShip" && GameWindow.FIRE && rateo==0){
-                fire(1,g);
-                rateo = 10;
-            }
-            g.immunityTimer();
+            g.timer();
         }
-        if(rateo>0)
-            rateo--;
-        
     }
     
     public void animate(){
-        //muovi elementi modificando minx e miny dei bounds del model
         if(!array.isEmpty()){
             for(int i = 0; i < array.size(); i++){
                 GameObject g = array.get(i);
@@ -81,7 +74,7 @@ public class SpaceImpactRevive extends AnimationTimer{
             }
        }
     }
-    public void check(){ //aggiorna 
+    public void check(){ //aggiorna l'array e vedi se ci sono elementi da rimuovere
         if(!array.isEmpty()){
             for(int i = 0; i < array.size(); i++){
                 GameObject g =array.get(i);
@@ -95,13 +88,13 @@ public class SpaceImpactRevive extends AnimationTimer{
 
     public void score() {
         Player.getInstance().score();
-        StatusBar.getInstance().score(getScore());
+        StatusBar.getInstance().score();
     }
     public void collisionCheck(GameObject a, GameObject b){
-        if(a.intersects(b) && a.getType()!= b.getType()){
+        if(a.intersect(b) && a.getType().equals(b.getType())){
             a.collide();
             b.collide();
-            if(a.getType()=="Enemy" || b.getType()=="Enemy")//un nemico è stato colpito da qualcosa e quindi ottengo un punto
+            if(a.getType().equals("Enemy") || b.getType().equals("Enemy"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
                 score();
         }
     }

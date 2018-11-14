@@ -42,22 +42,17 @@ public class GameObject {
     public String getType(){
         return type;
     }
-    public void immunityTimer(){
+    public void timer(){
         model.immunityTimer();
     }
     public void animationLoop(){
         this.view.animationLoop();
     }
     public boolean daDistruggere(){
-        if(model.getLife()<= 0 || view.outOfSpace())
-            return true;
-        else
-            return false;
+        return model.getLife()<= 0 || view.outOfSpace();
     }
     public boolean intersect(GameObject b){
-        if(this.view.getBounds().intersect(b.returnView().getBounds()))return true;
-        else 
-            return false;
+        return view.getBounds().intersects(b.returnView().getBounds());
     }
     public GameView returnView(){
         return this.view;

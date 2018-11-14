@@ -5,7 +5,6 @@
  */
 package view;
 
-import controller.SpaceImpactRevive;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -33,8 +32,7 @@ public class FXMLDocumentControllerLivelli implements Initializable{
     
     public void selectLevel1(){
        Window.getInstance().gameWindow();
-       SpaceImpactRevive.getInstance().start();
-       Level1.getInstance();
+       Level.getInstance();
     }
     public void selectLevel2(){
         

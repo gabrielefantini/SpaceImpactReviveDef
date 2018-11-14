@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.GameObject;
+import controller.SpaceImpactRevive;
 import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,15 +16,13 @@ import javafx.scene.image.ImageView;
  * @author gabri
  */
 public class GameView {
-    private Image imageNormal;
-    private Image imageFlicker;
-    private ImageView imageDisplayed;
-    private int a;
-    private int b;
+    protected Image imageNormal;
+    protected Image imageFlicker;
+    protected ImageView imageDisplayed;
+    protected int a = 0;
+    private int b = 0;
     
     public GameView(){
-        a=0;
-        b=0;
     }
    
     public void animationLoop(){
@@ -30,7 +30,7 @@ public class GameView {
     }
 
     public boolean outOfSpace() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.imageDisplayed.getBoundsInParent().getMaxX()<=-5 || this.imageDisplayed.getBoundsInParent().getMinX()>=805;
     }
     public void remove(){
         Space.getInstance().getChildren().remove(imageDisplayed);
@@ -40,15 +40,15 @@ public class GameView {
         return imageDisplayed.getBoundsInParent();
     }
     public void flicker(){
-        if(a<10){
+        if(a<20){
             imageDisplayed.setImage(imageFlicker);
             a++;
         }
-        if(a == 10 && b<10){
+        if(a == 20 && b<20){
             imageDisplayed.setImage(imageNormal);
             b++;
         }
-        if(a==10 && b == 10){
+        if(a==20 && b == 20){
             a=0;
             b=0;
         }
@@ -57,5 +57,45 @@ public class GameView {
     public void stopFlicker(){
         imageDisplayed.setImage(imageNormal);
         a=0;b=0;
+    }
+     public void moveElementBy(int dx, int dy){
+        if(dx == 0 && dy == 0) return;        
+        final double cx = this.getBounds().getWidth()/2;
+        final double cy = this.getBounds().getHeight()/2;
+        
+        double x = cx + imageDisplayed.getLayoutX() + dx;
+        double y = cy + imageDisplayed.getLayoutY() + dy;
+        moveElementTo(x,y);
+    }
+    public void moveElementTo(double x, double y){
+        final double cx = this.getBounds().getWidth() /2;
+        final double cy = this.getBounds().getHeight() / 2;
+        if( x - cx >= 0 && 
+            x + cx <= 800 &&
+            y - cy >= 0 &&
+            y + cy <= 400)
+            imageDisplayed.relocate(x - cx,y - cy);            
+    }
+    public void fire(int direction){
+        int x = 0;
+        int y=0; 
+        if(direction >0){
+            x = (int)this.getBounds().getMaxX()+1;
+            y = (int) ((int)this.getBounds().getMaxY()-this.getBounds().getHeight()/2);
+            GameObject p = new GameObject("ProjectileDx");
+            SpaceImpactRevive.getInstance().add(p);
+            p.returnView().set(x, y);
+            System.out.println("view.GameView.fire()");
+        }
+        /*else
+            x = (int)this.getBounds().getMinX()- 30;
+            y = (int) ((int)this.getBounds().getMinY()+ this.getBounds().getHeight()/2);
+            GameObject p = new GameObject("ProjectileSx");
+            SpaceImpactRevive.getInstance().add(p);
+            p.returnView().set(x, y);*/
+ 
+    }
+    public void set(int x, int y){
+        this.imageDisplayed.relocate(x, y);
     }
 }

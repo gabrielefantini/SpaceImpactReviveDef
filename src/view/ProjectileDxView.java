@@ -5,6 +5,8 @@
  */
 package view;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import model.*;
 import model.ProjectileModel;
 
@@ -14,5 +16,7 @@ import model.ProjectileModel;
  */
 public class ProjectileDxView extends ProjectileView{
     public ProjectileDxView(){
+        super();
+        this.imageDisplayed = new ImageView(new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileDx.png")));
     }
 }

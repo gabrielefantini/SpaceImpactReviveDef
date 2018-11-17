@@ -70,7 +70,7 @@ public class SpaceImpactRevive extends AnimationTimer{
             for(int i = 0; i < array.size(); i++){
                 GameObject g = array.get(i);
                 g.animationLoop();
-                g.flicker();
+                //g.flicker();
             }
        }
     }
@@ -91,14 +91,19 @@ public class SpaceImpactRevive extends AnimationTimer{
         StatusBar.getInstance().score();
     }
     public void collisionCheck(GameObject a, GameObject b){
-        if(a.intersect(b) && a.getType().equals(b.getType())){
+        if(a.intersect(b) && !a.getType().equals(b.getType())){
             a.collide();
             b.collide();
+            System.out.println("controller.SpaceImpactRevive.collisionCheck()");
             if(a.getType().equals("Enemy") || b.getType().equals("Enemy"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
                 score();
         }
     }
     public void GameOver(){
         this.stop();
+    }
+
+    public void removeHeart() {
+        StatusBar.getInstance().removeLife();
     }
 }

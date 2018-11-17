@@ -77,22 +77,22 @@ public class GameView {
             imageDisplayed.relocate(x - cx,y - cy);            
     }
     public void fire(int direction){
-        int x = 0;
-        int y=0; 
+        int x;
+        int y; 
         if(direction >0){
             x = (int)this.getBounds().getMaxX()+1;
-            y = (int) ((int)this.getBounds().getMaxY()-this.getBounds().getHeight()/2);
+            y = (int)(this.getBounds().getMaxY()-this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileDx");
             SpaceImpactRevive.getInstance().add(p);
             p.returnView().set(x, y);
             System.out.println("view.GameView.fire()");
         }
-        /*else
+        else
             x = (int)this.getBounds().getMinX()- 30;
-            y = (int) ((int)this.getBounds().getMinY()+ this.getBounds().getHeight()/2);
+            y = (int)(this.getBounds().getMinY()+ this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileSx");
             SpaceImpactRevive.getInstance().add(p);
-            p.returnView().set(x, y);*/
+            p.returnView().set(x, y);
  
     }
     public void set(int x, int y){

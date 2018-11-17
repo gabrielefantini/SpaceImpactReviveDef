@@ -33,5 +33,6 @@ public class Player {
     public void removeLife() {
         if(life==1)SpaceImpactRevive.getInstance().GameOver();
         life--;
+        SpaceImpactRevive.getInstance().removeHeart();
     }
 }

@@ -7,6 +7,7 @@ package controller;
 
 import model.BackgroundModel;
 import model.Enemy1Model;
+import model.EnemyModel;
 import model.GameModel;
 import model.ProjectileDxModel;
 import model.ProjectileSxModel;
@@ -30,7 +31,7 @@ public class GameObject {
         
         switch (nomeEntita){
             case "SpaceShip" : model = new SpaceShipModel(); view = new SpaceShipView(); break;
-            case "Enemy1" : model = new Enemy1Model(); view = new Enemy1View(); break;
+            case "Enemy" : model = new EnemyModel(); view = new EnemyView(); break;
             case "ProjectileDx" : model = new ProjectileDxModel(); view = new ProjectileDxView(); break;
             case "ProjectileSx" : model = new ProjectileSxModel(); view = new ProjectileSxView(); break;
             case "Background" : model = new BackgroundModel(); view = new BackgroundView(); break;

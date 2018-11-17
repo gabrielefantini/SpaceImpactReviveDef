@@ -29,7 +29,7 @@ public class SpaceShipView extends GameView{
         if(GameWindow.DOWN) dy +=2;
         if(GameWindow.LEFT) dx -=2;
         if(GameWindow.RIGHT) dx +=2;
-        if(GameWindow.FIRE)fire(1);
+        //if(GameWindow.FIRE)fire(1);
         moveElementBy(dx,dy);
         
     }

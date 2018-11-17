@@ -20,7 +20,11 @@ class Level {
     protected Level(){
         timer = 0;
         SpaceImpactRevive.getInstance().start();
+        StatusBar.getInstance().addLife();
+        StatusBar.getInstance().addLife();
+        StatusBar.getInstance().addLife();
         SpaceImpactRevive.getInstance().add(new GameObject("SpaceShip"));
+        SpaceImpactRevive.getInstance().add(new GameObject("Enemy"));
         
     }
     public static Level getInstance() {

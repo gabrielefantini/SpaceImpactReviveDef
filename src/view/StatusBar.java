@@ -45,10 +45,12 @@ public class StatusBar extends GridPane{
     }
     public void removeLife(){
         this.getChildren().clear();
+        score.setText("Score: "+punteggio+" ");
+        this.add(score,0,0);
         position--;
-        for(int i=0; i<=position; i++){
-            ImageView image = new ImageView(heart);
-            this.add(image,position,0);
+        for(int i=1; i<position; i++){
+            this.add(new ImageView(heart),i,0);
+            System.out.println(i);
         }
     }
     public void score(){

@@ -14,9 +14,19 @@ import model.ProjectileModel;
  *
  * @author gabri
  */
-public class ProjectileDxView extends ProjectileView{
+public class ProjectileDxView extends GameView{
     public ProjectileDxView(){
         super();
-        this.imageDisplayed = new ImageView(new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileDx.png")));
+        imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileDx.png"));
+        this.imageDisplayed = new ImageView(imageNormal);
+        Space.getInstance().getChildren().add(imageDisplayed);
+    }
+    @Override
+    public void animationLoop(){
+        int c=10;
+        
+        int x = (int)imageDisplayed.getBoundsInParent().getMinX()+c;
+        int y =(int)imageDisplayed.getBoundsInParent().getMinY();
+        imageDisplayed.relocate(x,y);
     }
 }

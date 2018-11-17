@@ -70,4 +70,7 @@ public class GameObject {
         if(!model.flicker())
             view.stopFlicker();
     }
+    public void set(int x, int y){
+        this.view.set(x, y);
+    }
 }

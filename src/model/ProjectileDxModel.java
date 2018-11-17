@@ -11,9 +11,9 @@ import model.ProjectileModel;
  *
  * @author gabri
  */
-public class ProjectileDxModel extends ProjectileModel{
+public class ProjectileDxModel extends GameModel{
     public ProjectileDxModel(){
-
+        super();
         life = 1;
         IMMUNITY = 0;
 

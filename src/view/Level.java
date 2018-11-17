@@ -7,6 +7,7 @@ package view;
 
 import controller.GameObject;
 import controller.SpaceImpactRevive;
+import javafx.animation.AnimationTimer;
 import model.GameModel;
 import model.SpaceShipModel;
 
@@ -14,7 +15,7 @@ import model.SpaceShipModel;
  *
  * @author gabri
  */
-class Level {
+class Level extends AnimationTimer {
     private int timer;
     private static Level instance = null;
     protected Level(){
@@ -25,6 +26,7 @@ class Level {
         StatusBar.getInstance().addLife();
         SpaceImpactRevive.getInstance().add(new GameObject("SpaceShip"));
         SpaceImpactRevive.getInstance().add(new GameObject("Enemy"));
+        start();
         
     }
     public static Level getInstance() {
@@ -33,6 +35,13 @@ class Level {
     }
     public void levelTime(){
         timer++;
+        System.out.println(timer);
+        if(timer == 600)SpaceImpactRevive.getInstance().add(new GameObject("Enemy"));
+    }
+
+    @Override
+    public void handle(long now) {
+        levelTime();
     }
     
 }

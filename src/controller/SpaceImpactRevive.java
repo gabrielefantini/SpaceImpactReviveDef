@@ -94,12 +94,12 @@ public class SpaceImpactRevive extends AnimationTimer{
         if(a.intersect(b) && !a.getType().equals(b.getType())){
             a.collide();
             b.collide();
-            System.out.println("controller.SpaceImpactRevive.collisionCheck()");
             if(a.getType().equals("Enemy") || b.getType().equals("Enemy"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
                 score();
         }
     }
     public void GameOver(){
+        System.out.println("GAME OVER");
         this.stop();
     }
 

@@ -84,15 +84,16 @@ public class GameView {
             y = (int)(this.getBounds().getMaxY()-this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileDx");
             SpaceImpactRevive.getInstance().add(p);
-            p.returnView().set(x, y);
+            p.set(x, y);
             System.out.println("view.GameView.fire()");
         }
-        else
+        else{
             x = (int)this.getBounds().getMinX()- 30;
-            y = (int)(this.getBounds().getMinY()+ this.getBounds().getHeight()/2);
+            y = (int)(this.getBounds().getMinY()- this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileSx");
-            SpaceImpactRevive.getInstance().add(p);
-            p.returnView().set(x, y);
+            SpaceImpactRevive.getInstance().add(p);p.set(x, y);
+        }
+            
  
     }
     public void set(int x, int y){

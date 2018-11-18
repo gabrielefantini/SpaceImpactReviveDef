@@ -13,13 +13,17 @@ import javafx.scene.image.ImageView;
  * @author gabri
  */
 public class SpaceShipView extends GameView{
+    private int rateo;
+    private int RATEO;
     public SpaceShipView(){ 
         super();
         this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal.png"));
         this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker.png"));
         this.imageDisplayed = new ImageView(imageNormal);
         Space.getInstance().getChildren().add(imageDisplayed);
-        System.out.println("view.SpaceShipView.<init>()");   
+        System.out.println("view.SpaceShipView.<init>()");  
+        rateo = 0;
+        RATEO=10;
     }
     @Override
     public void animationLoop(){
@@ -29,9 +33,12 @@ public class SpaceShipView extends GameView{
         if(GameWindow.DOWN) dy +=2;
         if(GameWindow.LEFT) dx -=2;
         if(GameWindow.RIGHT) dx +=2;
-        if(GameWindow.FIRE)fire(1);
+        if(GameWindow.FIRE && rateo == 0){fire(1); rateo = RATEO;} 
+        if(rateo>0)rateo--;
         moveElementBy(dx,dy);
         
     }
-    
+    public void setRateo(int x){
+        RATEO = x;
+    }
 }

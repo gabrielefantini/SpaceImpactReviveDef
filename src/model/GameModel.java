@@ -19,6 +19,7 @@ public class GameModel {
 
     
     public GameModel(){
+        life = 1;
     }
     public void collide(){
         getDamage();

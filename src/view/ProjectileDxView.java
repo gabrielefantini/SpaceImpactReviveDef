@@ -23,7 +23,7 @@ public class ProjectileDxView extends GameView{
     }
     @Override
     public void animationLoop(){
-        int c=10;
+        int c=8;
         
         int x = (int)imageDisplayed.getBoundsInParent().getMinX()+c;
         int y =(int)imageDisplayed.getBoundsInParent().getMinY();

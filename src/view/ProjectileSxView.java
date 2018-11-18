@@ -5,7 +5,9 @@
  */
 package view;
 
-import model.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 
 /**
  *
@@ -13,6 +15,17 @@ import model.*;
  */
 public class ProjectileSxView extends ProjectileView{
     public ProjectileSxView(){
-
+        super();
+        imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileSx.png"));
+        this.imageDisplayed = new ImageView(imageNormal);
+        Space.getInstance().getChildren().add(imageDisplayed);
+    }
+    @Override
+    public void animationLoop(){
+        int c=2;
+        
+        int x = (int)imageDisplayed.getBoundsInParent().getMinX()-c;
+        int y =(int)imageDisplayed.getBoundsInParent().getMinY();
+        imageDisplayed.relocate(x,y);
     }
 }

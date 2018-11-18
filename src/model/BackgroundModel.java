@@ -7,9 +7,10 @@ package model;
 
 /**
  *
- * @author gabriele fantini
+ * @author gabri
  */
 public class BackgroundModel extends GameModel{
     public BackgroundModel(){
+        super();
     }
 }

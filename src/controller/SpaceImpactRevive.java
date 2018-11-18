@@ -6,7 +6,6 @@
 package controller;
 
 import javafx.animation.AnimationTimer;
-import model.BackgroundModel;
 import model.GameModel;
 import java.util.ArrayList;
 import model.EnemyModel;
@@ -91,7 +90,7 @@ public class SpaceImpactRevive extends AnimationTimer{
         StatusBar.getInstance().score();
     }
     public void collisionCheck(GameObject a, GameObject b){
-        if(a.intersect(b) && !a.getType().equals(b.getType())){
+        if(a.intersect(b) && !a.getType().equals(b.getType()) && !a.getType().equals("Background") && !b.getType().equals("Background")){
             a.collide();
             b.collide();
             if(a.getType().equals("Enemy") || b.getType().equals("Enemy"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
@@ -105,5 +104,13 @@ public class SpaceImpactRevive extends AnimationTimer{
 
     public void removeHeart() {
         StatusBar.getInstance().removeLife();
+    }
+    public void stopBackground(){
+        for(int i = 0; i < array.size(); i++){
+            GameObject g =array.get(i);
+            if(g.getType().equals("Background")){
+                g.stopBackground();
+            }
+        }
     }
 }

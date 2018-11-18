@@ -24,8 +24,9 @@ class Level extends AnimationTimer {
         StatusBar.getInstance().addLife();
         StatusBar.getInstance().addLife();
         StatusBar.getInstance().addLife();
+        SpaceImpactRevive.getInstance().add(new GameObject("Background"));
         SpaceImpactRevive.getInstance().add(new GameObject("SpaceShip"));
-        SpaceImpactRevive.getInstance().add(new GameObject("Enemy"));
+        SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
         start();
         
     }
@@ -37,6 +38,8 @@ class Level extends AnimationTimer {
         timer++;
         System.out.println(timer);
         if(timer == 600)SpaceImpactRevive.getInstance().add(new GameObject("Enemy"));
+        if(timer==1000)SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
+        //if(timer==200)SpaceImpactRevive.getInstance().stopBackground();
     }
 
     @Override

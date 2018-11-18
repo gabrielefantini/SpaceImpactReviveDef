@@ -32,8 +32,10 @@ public class GameObject {
         switch (nomeEntita){
             case "SpaceShip" : model = new SpaceShipModel(); view = new SpaceShipView(); break;
             case "Enemy" : model = new EnemyModel(); view = new EnemyView(); break;
+            case "Enemy1" : model = new Enemy1Model(); view = new Enemy1View(); break;
             case "ProjectileDx" : model = new ProjectileDxModel(); view = new ProjectileDxView(); break;
             case "ProjectileSx" : model = new ProjectileSxModel(); view = new ProjectileSxView(); break;
+            case "ProjectileSx1" : model = new ProjectileSxModel(); view = new ProjectileSx1View(); break;
             case "Background" : model = new BackgroundModel(); view = new BackgroundView(); break;
         }
     }
@@ -65,12 +67,18 @@ public class GameObject {
         model.collide();
     }
     public void flicker(){
+        if(type.equals("SpaceShip")){
         if(model.flicker())
             view.flicker();
         if(!model.flicker())
             view.stopFlicker();
+        }
     }
     public void set(int x, int y){
         this.view.set(x, y);
+    }
+
+    void stopBackground() {
+        view.stopBackground();
     }
 }

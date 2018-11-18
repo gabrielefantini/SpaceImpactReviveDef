@@ -14,7 +14,7 @@ import model.GameModel;
 public class EnemyModel extends GameModel{
     public EnemyModel(){
     life = 3;
-        IMMUNITY = 300;
+        IMMUNITY = 200;
         
     }
 }

@@ -30,7 +30,7 @@ public class GameView {
     }
 
     public boolean outOfSpace() {
-        return this.imageDisplayed.getBoundsInParent().getMaxX()<=-5 || this.imageDisplayed.getBoundsInParent().getMinX()>=805;
+        return this.imageDisplayed.getBoundsInParent().getMaxX()<=-20 || this.imageDisplayed.getBoundsInParent().getMinX()>=820;
     }
     public void remove(){
         Space.getInstance().getChildren().remove(imageDisplayed);
@@ -88,15 +88,27 @@ public class GameView {
             System.out.println("view.GameView.fire()");
         }
         else{
-            x = (int)this.getBounds().getMinX()- 30;
-            y = (int)(this.getBounds().getMinY()- this.getBounds().getHeight()/2);
+            if(direction == -5){
+            x = (int)this.getBounds().getMinX()- 90;
+            y = (int)(this.getBounds().getMaxY()- this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileSx");
             SpaceImpactRevive.getInstance().add(p);p.set(x, y);
+            }else
+            if(direction ==-1){
+            x = (int)this.getBounds().getMinX()- 20;
+            y = (int)(this.getBounds().getMaxY()- this.getBounds().getHeight()/2);
+            GameObject p = new GameObject("ProjectileSx1");
+            SpaceImpactRevive.getInstance().add(p);p.set(x, y);  
+            }
         }
             
  
     }
     public void set(int x, int y){
         this.imageDisplayed.relocate(x, y);
+    }
+
+    public void stopBackground() {
+       
     }
 }

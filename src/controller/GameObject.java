@@ -34,8 +34,8 @@ public class GameObject {
             case "Enemy" : model = new EnemyModel(); view = new EnemyView(); break;
             case "Enemy1" : model = new Enemy1Model(); view = new Enemy1View(); break;
             case "ProjectileDx" : model = new ProjectileDxModel(); view = new ProjectileDxView(); break;
-            case "ProjectileSx" : model = new ProjectileSxModel(); view = new ProjectileSxView(); break;
-            case "ProjectileSx1" : model = new ProjectileSxModel(); view = new ProjectileSx1View(); break;
+            case "ProjectileSx" : model = new ProjectileSxModel(); view = new ProjectileSxView(0); break;
+            case "ProjectileSx1" : model = new ProjectileSxModel(); view = new ProjectileSxView(1); break;
             case "Background" : model = new BackgroundModel(); view = new BackgroundView(); break;
         }
     }

@@ -6,9 +6,12 @@
 package view;
 
 import controller.SpaceImpactRevive;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -25,10 +28,8 @@ public class GameWindow {
     
     private GameWindow(){
         window = new BorderPane();
-        
         window.setCenter(space.getInstance());
         window.setTop(statusBar.getInstance());
-        
         Scene scene = new Scene(window,800,428);
         
         //event listener
@@ -58,5 +59,11 @@ public class GameWindow {
     public static GameWindow getInstance() {
         if(instance == null)instance = new GameWindow();
         return instance;
+    }
+    public void GameOver(){
+        try {
+            window.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLDocumentGameOver.fxml")));
+        } catch (Exception e) {
+        }
     }
 }

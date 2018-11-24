@@ -10,6 +10,7 @@ import controller.SpaceImpactRevive;
 import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
 
 /**
  *
@@ -19,10 +20,12 @@ public class GameView {
     protected Image imageNormal;
     protected Image imageFlicker;
     protected ImageView imageDisplayed;
-    protected int a = 0;
-    private int b = 0;
+    protected AudioClip fireSound;
+    protected int a;
+    private int b;
     
     public GameView(){
+        a=0;b=0;
     }
    
     public void animationLoop(){
@@ -40,15 +43,15 @@ public class GameView {
         return imageDisplayed.getBoundsInParent();
     }
     public void flicker(){
-        if(a<20){
+        if(a<15){
             imageDisplayed.setImage(imageFlicker);
             a++;
         }
-        if(a == 20 && b<20){
+        if(a == 15 && b<15){
             imageDisplayed.setImage(imageNormal);
             b++;
         }
-        if(a==20 && b == 20){
+        if(a==15 && b == 15){
             a=0;
             b=0;
         }

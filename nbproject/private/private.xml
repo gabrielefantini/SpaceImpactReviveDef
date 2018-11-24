@@ -3,37 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/EnemyView.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/model/EnemyModel.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/model/Enemy1Model.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/img/580b585b2edbce24c47b2d2d.png</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/img/ProjectileSx.png</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/ProjectileDxView.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/GameView.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/img/enemy2.jpg</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/ProjectileSx1View.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/model/ProjectileModel.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/model/ProjectileDxModel.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/ProjectileView.java</file>
             <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/SpaceShipView.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/controller/SpaceImpactRevive.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/BackgroundView.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/img/Background.png</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/model/GameModel.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/model/BackgroundModel.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/controller/GameObject.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/Level.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/FXMLDocumentControllerLivelli.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/model/ProjectileSxModel.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/img/hjm-asteroids.png</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/img/beams.png</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/model/SpaceShipModel.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/GameWindow.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/img/ProjectileSx1.png</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/Enemy1View.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/ProjectileSxView.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/view/Space.java</file>
-            <file>file:/C:/Users/gabri/Desktop/SpaceImpactReviveDef/src/img/ProjectileDx.png</file>
         </group>
     </open-files>
 </project-private>

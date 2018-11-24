@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 
 /**
@@ -32,7 +33,7 @@ public class StatusBar extends GridPane{
         score = new Label(" Score: ");
         this.add(score,0,0);
         position = 1;
-        this.setGridLinesVisible(true);
+        
     }
     public static StatusBar getInstance() {
         if(instance == null)instance = new StatusBar();

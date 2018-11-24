@@ -5,6 +5,8 @@
  */
 package view;
 
+import java.net.URL;
+import javafx.scene.media.AudioClip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -20,6 +22,11 @@ public class SpaceShipView extends GameView{
         this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal.png"));
         this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker.png"));
         this.imageDisplayed = new ImageView(imageNormal);
+        try {
+            fireSound = new AudioClip(SpaceShipView.class.getResource("/audio/laser10.wav").toString());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         Space.getInstance().getChildren().add(imageDisplayed);
         System.out.println("view.SpaceShipView.<init>()");  
         rateo = 0;
@@ -33,7 +40,7 @@ public class SpaceShipView extends GameView{
         if(GameWindow.DOWN) dy +=2;
         if(GameWindow.LEFT) dx -=2;
         if(GameWindow.RIGHT) dx +=2;
-        if(GameWindow.FIRE && rateo == 0){fire(1); rateo = RATEO;} 
+        if(GameWindow.FIRE && rateo == 0){fire(1);fireSound.play(7); rateo = RATEO;} 
         if(rateo>0)rateo--;
         moveElementBy(dx,dy);
         

@@ -69,7 +69,7 @@ public class SpaceImpactRevive extends AnimationTimer{
             for(int i = 0; i < array.size(); i++){
                 GameObject g = array.get(i);
                 g.animationLoop();
-                //g.flicker();
+                g.flicker();
             }
        }
     }
@@ -100,6 +100,7 @@ public class SpaceImpactRevive extends AnimationTimer{
     public void GameOver(){
         System.out.println("GAME OVER");
         this.stop();
+        GameWindow.getInstance().GameOver();
     }
 
     public void removeHeart() {

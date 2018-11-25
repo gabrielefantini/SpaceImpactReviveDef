@@ -7,6 +7,7 @@ package view;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.AudioClip;
 
 /**
  *
@@ -24,13 +25,18 @@ public class Enemy1View extends EnemyView{
         this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/enemy2.png"));
         //this.imageFlicker = new Image(EnemyView.class.getResourceAsStream("/img/enemy2.png"));
         this.imageDisplayed = new ImageView(imageNormal);
+        try {
+            fireSound = new AudioClip(EnemyView.class.getResource("/audio/littleLaserGun.wav").toString());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         Space.getInstance().getChildren().add(imageDisplayed);
         imageDisplayed.relocate(800,0);
         rateo = 40;
     }
     @Override
     public void animationLoop(){
-        if(rateo==0){fire(-1);rateo = 10;}
+        if(rateo==0){fire(-1);fireSound.play(0.2);rateo = 15;}
         rateo--;
         ondeggia();
     }

@@ -13,6 +13,7 @@ import model.GameModel;
  */
 public class ProjectileModel extends GameModel{
     public ProjectileModel(){
+        super();
         life = 3;
         IMMUNITY = 300;
     } 

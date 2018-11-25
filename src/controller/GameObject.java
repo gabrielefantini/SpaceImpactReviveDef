@@ -9,6 +9,7 @@ import model.BackgroundModel;
 import model.Enemy1Model;
 import model.EnemyModel;
 import model.GameModel;
+import model.ObstacleModel;
 import model.ProjectileDxModel;
 import model.ProjectileSxModel;
 import model.SpaceShipModel;
@@ -37,6 +38,8 @@ public class GameObject {
             case "ProjectileSx" : model = new ProjectileSxModel(); view = new ProjectileSxView(0); break;
             case "ProjectileSx1" : model = new ProjectileSxModel(); view = new ProjectileSxView(1); break;
             case "Background" : model = new BackgroundModel(); view = new BackgroundView(); break;
+            case "Obstacle0" : model = new ObstacleModel(); view = new ObstacleView(0); break;
+            case "Obstacle250" : model = new ObstacleModel(); view = new ObstacleView(250); break;
         }
     }
     public void die(){

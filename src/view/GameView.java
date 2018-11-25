@@ -92,7 +92,7 @@ public class GameView {
         }
         else{
             if(direction == -5){
-            x = (int)this.getBounds().getMinX()- 90;
+            x = (int)this.getBounds().getMinX()- 110;
             y = (int)(this.getBounds().getMaxY()- this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileSx");
             SpaceImpactRevive.getInstance().add(p);p.set(x, y);

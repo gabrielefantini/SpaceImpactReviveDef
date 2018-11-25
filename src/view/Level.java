@@ -37,8 +37,14 @@ class Level extends AnimationTimer {
     public void levelTime(){
         timer++;
         System.out.println(timer);
-        if(timer == 600)SpaceImpactRevive.getInstance().add(new GameObject("Enemy"));
-        if(timer==1000)SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
+        if(timer==300){
+            SpaceImpactRevive.getInstance().add(new GameObject("Obstacle0"));
+            SpaceImpactRevive.getInstance().add(new GameObject("Obstacle250"));
+        }
+        if(timer == 600){
+            SpaceImpactRevive.getInstance().add(new GameObject("Enemy"));
+        }
+        if(timer==1400)SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
         //if(timer==200)SpaceImpactRevive.getInstance().stopBackground();
     }
 

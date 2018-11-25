@@ -93,7 +93,10 @@ public class SpaceImpactRevive extends AnimationTimer{
         if(a.intersect(b) && !a.getType().equals(b.getType()) && !a.getType().equals("Background") && !b.getType().equals("Background")){
             a.collide();
             b.collide();
-            if(a.getType().equals("Enemy") || b.getType().equals("Enemy"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
+            if(a.getType().equals("Enemy") || b.getType().equals("Enemy")||
+                    a.getType().equals("Enemy1") || b.getType().equals("Enemy1")||
+                    a.getType().equals("Obstacle0") || b.getType().equals("Obstacle0")||
+                    a.getType().equals("Obstacle250") || b.getType().equals("Obstacle250"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
                 score();
         }
     }

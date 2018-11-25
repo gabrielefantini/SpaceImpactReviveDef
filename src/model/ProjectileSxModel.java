@@ -11,6 +11,7 @@ package model;
  */
 public class ProjectileSxModel extends ProjectileModel{
     public ProjectileSxModel(){
+       super();
        life = 1;
        IMMUNITY = 0;
     }

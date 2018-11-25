@@ -40,7 +40,7 @@ public class SpaceShipView extends GameView{
         if(GameWindow.DOWN) dy +=2;
         if(GameWindow.LEFT) dx -=2;
         if(GameWindow.RIGHT) dx +=2;
-        if(GameWindow.FIRE && rateo == 0){fire(1);fireSound.play(7); rateo = RATEO;} 
+        if(GameWindow.FIRE && rateo == 0){fire(1);fireSound.play(0.8); rateo = RATEO;} 
         if(rateo>0)rateo--;
         moveElementBy(dx,dy);
         

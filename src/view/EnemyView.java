@@ -18,11 +18,11 @@ public class EnemyView extends GameView{
     private int rateo;
     public EnemyView(){
         super();
-        this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/enemy.png"));
+        this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/BigEnemy.png"));
         this.imageDisplayed = new ImageView(imageNormal);
         
         try {
-            fireSound = new AudioClip(EnemyView.class.getResource("/audio/laser10.wav").toString());
+            fireSound = new AudioClip(EnemyView.class.getResource("/audio/bigLaserGun.wav").toString());
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -34,7 +34,7 @@ public class EnemyView extends GameView{
     @Override
     public void animationLoop(){
         int c=1;
-        if(rateo==0){fire(-5);fireSound.play(); rateo = 150;}
+        if(rateo==0){fire(-5);fireSound.play(1); rateo = 150;}
         rateo--;
         int x = (int)imageDisplayed.getBoundsInParent().getMinX()-c;
         int y =(int)imageDisplayed.getBoundsInParent().getMinY();

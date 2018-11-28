@@ -15,10 +15,10 @@ import model.SpaceShipModel;
  *
  * @author gabri
  */
-class Level extends AnimationTimer {
+class Level1 extends AnimationTimer {
     private int timer;
-    private static Level instance = null;
-    protected Level(){
+    private static Level1 instance = null;
+    protected Level1(){
         timer = 0;
         SpaceImpactRevive.getInstance().start();
         StatusBar.getInstance().addLife();
@@ -26,23 +26,22 @@ class Level extends AnimationTimer {
         StatusBar.getInstance().addLife();
         SpaceImpactRevive.getInstance().add(new GameObject("Background"));
         SpaceImpactRevive.getInstance().add(new GameObject("SpaceShip"));
-        SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
+        //SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
         start();
         
     }
-    public static Level getInstance() {
-        if(instance == null)instance = new Level();
+    public static Level1 getInstance() {
+        if(instance == null)instance = new Level1();
         return instance;
     }
     public void levelTime(){
         timer++;
         System.out.println(timer);
-        if(timer==300){
-            SpaceImpactRevive.getInstance().add(new GameObject("Obstacle0"));
-            SpaceImpactRevive.getInstance().add(new GameObject("Obstacle250"));
+        if(timer==100){
+            obstacleBarrier();
         }
         if(timer == 600){
-            SpaceImpactRevive.getInstance().add(new GameObject("Enemy"));
+            SpaceImpactRevive.getInstance().add(new GameObject("Enemy2"));
         }
         if(timer==1400)SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
         //if(timer==200)SpaceImpactRevive.getInstance().stopBackground();
@@ -52,5 +51,9 @@ class Level extends AnimationTimer {
     public void handle(long now) {
         levelTime();
     }
-    
+    public void obstacleBarrier(){
+        SpaceImpactRevive.getInstance().add(new GameObject("Obstacle0"));
+        SpaceImpactRevive.getInstance().add(new GameObject("Obstacle140"));
+        SpaceImpactRevive.getInstance().add(new GameObject("Obstacle270"));
+    }
 }

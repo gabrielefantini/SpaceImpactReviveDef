@@ -32,11 +32,14 @@ public class FXMLDocumentControllerLivelli implements Initializable{
     
     public void selectLevel1(){
        Window.getInstance().gameWindow();
-       Level.getInstance();
+       Level1.getInstance();
     }
     public void selectLevel2(){
-        
+        Window.getInstance().gameWindow();
+        Level2.getInstance();
     }
     public void selectLevel3(){        
+        Window.getInstance().gameWindow();
+        Level3.getInstance();
     }
 }

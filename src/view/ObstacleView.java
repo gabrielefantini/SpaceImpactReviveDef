@@ -30,8 +30,12 @@ public class ObstacleView extends EnemyView{
         int c=1;
         if(counter==120)counter = 1;
         if(frameRate==0){
-            imageDisplayed.setImage(new Image(ObstacleView.class.getResourceAsStream("/img/1 ("+counter+").png")));
-            counter++;; 
+            try{
+                imageDisplayed.setImage(new Image(ObstacleView.class.getResourceAsStream("/img/1 ("+counter+").png")));
+            }catch(Exception e){
+                System.out.println(e);
+            }
+                counter++; 
             frameRate = 4;}
         frameRate--;
         int x = (int)imageDisplayed.getBoundsInParent().getMinX()-c;

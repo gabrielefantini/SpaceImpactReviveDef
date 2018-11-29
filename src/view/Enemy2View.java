@@ -36,7 +36,7 @@ public class Enemy2View extends EnemyView{
     }
     @Override
     public void animationLoop(){
-        if(rateo==0){fire(-1);fireSound.play(0.2);rateo = 15;}
+        if(rateo==0){fire(-1);if(sound)fireSound.play(0.2);rateo = 15;}
         rateo--;
         ondeggia();
     }

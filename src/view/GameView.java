@@ -17,6 +17,7 @@ import javafx.scene.media.AudioClip;
  * @author gabri
  */
 public class GameView {
+    protected boolean sound;
     protected Image imageNormal;
     protected Image imageFlicker;
     protected ImageView imageDisplayed;
@@ -26,6 +27,7 @@ public class GameView {
     
     public GameView(){
         a=0;b=0;
+        sound = true;
     }
    
     public void animationLoop(){
@@ -110,8 +112,8 @@ public class GameView {
     public void set(int x, int y){
         this.imageDisplayed.relocate(x, y);
     }
-
-    public void stopBackground() {
-       
+    public void stopBackground(){}
+    public void setSound(boolean value){
+        sound = value;
     }
 }

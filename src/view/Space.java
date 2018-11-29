@@ -5,7 +5,6 @@
  */
 package view;
 
-import controller.SpaceImpactRevive;
 import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

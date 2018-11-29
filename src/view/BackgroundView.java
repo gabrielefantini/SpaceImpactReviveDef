@@ -23,6 +23,7 @@ public class BackgroundView extends GameView{
         imageDisplayed.relocate(0,0);
         c=1;
     }
+
     @Override
     public void stopBackground(){
         c=0;

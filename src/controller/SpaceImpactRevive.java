@@ -26,7 +26,7 @@ public class SpaceImpactRevive {
     private int currentLevel;
     
     private SpaceImpactRevive(){
-        this.array = new ArrayList<GameObject>();
+        this.array = new ArrayList<>();
         rateo = 0;
     }
     
@@ -62,6 +62,7 @@ public class SpaceImpactRevive {
                     collisionCheck(g,f);
             }
             g.timer();
+            g.setSound(true);
         }
     }
     
@@ -106,9 +107,9 @@ public class SpaceImpactRevive {
     public void GameOver(){
         System.out.println("GAME OVER");
         switch (this.currentLevel){
-            case 1: Level1.getInstance().stop();
-            case 2: Level2.getInstance().stop();
-            case 3: Level3.getInstance().stop();
+            case 1: Level1.getInstance().stop();break;
+            case 2: Level2.getInstance().stop();break;
+            case 3: Level3.getInstance().stop();break;
         }
         GameWindow.getInstance().GameOver();
     }

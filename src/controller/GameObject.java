@@ -84,7 +84,10 @@ public class GameObject {
         this.view.set(x, y);
     }
 
-    void stopBackground() {
+    public void stopBackground() {
         view.stopBackground();
+    }
+    public void setSound(boolean value){
+        view.setSound(value);
     }
 }

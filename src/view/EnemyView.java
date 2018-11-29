@@ -34,7 +34,7 @@ public class EnemyView extends GameView{
     @Override
     public void animationLoop(){
         int c=1;
-        if(rateo==0){fire(-5);fireSound.play(1); rateo = 150;}
+        if(rateo==0){fire(-5);if(sound)fireSound.play(1); rateo = 150;}
         rateo--;
         int x = (int)imageDisplayed.getBoundsInParent().getMinX()-c;
         int y =(int)imageDisplayed.getBoundsInParent().getMinY();

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FXMLDocumentMenuPiccoloController">
+  <children>
+    <Pane layoutX="9.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.0000999999975">
+      <children>
+        <AnchorPane layoutX="-4.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.999977929685">
+          <children>
+            <Button layoutX="248.0" layoutY="134.0" mnemonicParsing="false" onAction="#Impostazioni" prefHeight="66.0" prefWidth="296.0" text="Impostazioni" />
+            <Button layoutX="248.0" layoutY="39.0" mnemonicParsing="false" onAction="#Riassumi" prefHeight="66.0" prefWidth="296.0" text="Riassumi" />
+            <Button layoutX="252.0" layoutY="221.0" mnemonicParsing="false" onAction="#SalvaEdEsci" prefHeight="66.0" prefWidth="296.0" text="Salva ed Esci" />
+            <Button layoutX="252.0" layoutY="302.0" mnemonicParsing="false" onAction="#SalvaEMenuIniziale" prefHeight="66.0" prefWidth="296.0" text="Salva e Torna al Menu iniziale" />
+          </children>
+        </AnchorPane>
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

@@ -8,19 +8,17 @@ package view;
 import controller.GameObject;
 import controller.SpaceImpactRevive;
 import javafx.animation.AnimationTimer;
-import model.GameModel;
-import model.SpaceShipModel;
 
 /**
  *
  * @author gabri
  */
-class Level1 extends AnimationTimer {
+public class Level1 extends AnimationTimer {
     private int timer;
     private static Level1 instance = null;
     protected Level1(){
         timer = 0;
-        SpaceImpactRevive.getInstance().start();
+        SpaceImpactRevive.getInstance().setLevel(1);
         StatusBar.getInstance().addLife();
         StatusBar.getInstance().addLife();
         StatusBar.getInstance().addLife();
@@ -49,6 +47,7 @@ class Level1 extends AnimationTimer {
 
     @Override
     public void handle(long now) {
+        SpaceImpactRevive.getInstance().gameLoop();
         levelTime();
     }
     public void obstacleBarrier(){

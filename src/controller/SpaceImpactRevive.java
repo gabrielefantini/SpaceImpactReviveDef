@@ -5,26 +5,25 @@
  */
 package controller;
 
-import javafx.animation.AnimationTimer;
-import model.GameModel;
+
 import java.util.ArrayList;
-import model.EnemyModel;
 import model.Player;
-import model.ProjectileDxModel;
-import model.ProjectileSxModel;
-import model.SpaceShipModel;
 import view.GameWindow;
-import view.Space;
+import view.Level1;
+import view.Level2;
+import view.Level3;
+
 import view.StatusBar;
 
 /**
  *
  * @author gabri
  */
-public class SpaceImpactRevive extends AnimationTimer{
+public class SpaceImpactRevive {
     private static SpaceImpactRevive instance=null;
     private ArrayList<GameObject> array;
     private int rateo;
+    private int currentLevel;
     
     private SpaceImpactRevive(){
         this.array = new ArrayList<GameObject>();
@@ -35,15 +34,17 @@ public class SpaceImpactRevive extends AnimationTimer{
         if(instance==null)instance = new SpaceImpactRevive();
         return instance;
     }
-    
+    public void setLevel(int level){
+        currentLevel = level;
+    }
+    public int getLevel(){
+        return currentLevel;
+    }
      public void add(GameObject g){
         array.add(g);
     }
      
-    @Override
-    public void handle(long now) {
-        gameLoop();
-    }
+
     
     public void gameLoop(){
         sync();
@@ -95,14 +96,20 @@ public class SpaceImpactRevive extends AnimationTimer{
             b.collide();
             if(a.getType().equals("Enemy") || b.getType().equals("Enemy")||
                     a.getType().equals("Enemy1") || b.getType().equals("Enemy1")||
+                    a.getType().equals("Enemy2") || b.getType().equals("Enemy2")||
                     a.getType().equals("Obstacle0") || b.getType().equals("Obstacle0")||
-                    a.getType().equals("Obstacle250") || b.getType().equals("Obstacle250"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
+                    a.getType().equals("Obstacle140") || b.getType().equals("Obstacle140")||
+                    a.getType().equals("Obstacle270") || b.getType().equals("Obstacle270"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
                 score();
         }
     }
     public void GameOver(){
         System.out.println("GAME OVER");
-        this.stop();
+        switch (this.currentLevel){
+            case 1: Level1.getInstance().stop();
+            case 2: Level2.getInstance().stop();
+            case 3: Level3.getInstance().stop();
+        }
         GameWindow.getInstance().GameOver();
     }
 

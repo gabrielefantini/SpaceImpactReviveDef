@@ -52,6 +52,15 @@ public class Window {
         } catch (Exception e) {
         }
     }
+    public void menuPiccolo(){
+        clear();
+        try {
+            primaryStage.show();
+            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLDocumentMenuPiccolo.fxml")));
+        } catch (Exception e) {
+            System.out.println("view.Window.menuPiccolo()");
+        }
+    }
     public void menuSettings(){
         
     }
@@ -59,7 +68,7 @@ public class Window {
         
     }
     public void gameWindow(){
-        primaryStage.close();
+        primaryStage.hide();
         GameWindow.getInstance();
     }
 }

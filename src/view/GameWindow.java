@@ -27,9 +27,10 @@ public class GameWindow {
     public static boolean UP,DOWN,LEFT,RIGHT,FIRE;
     
     private GameWindow(){
-        window = new BorderPane();
-        window.setCenter(space.getInstance());
+        window = new BorderPane();      
         window.setTop(statusBar.getInstance());
+        window.setCenter(space.getInstance());
+
         Scene scene = new Scene(window,800,428);
         
         //event listener
@@ -39,7 +40,7 @@ public class GameWindow {
                 case DOWN:  DOWN = true; break;
                 case LEFT:  LEFT  = true; break;
                 case RIGHT: RIGHT  = true; break; 
-                case SPACE: FIRE  = true; break; 
+                case Z: FIRE  = true; break; 
             }
         });
         scene.setOnKeyReleased((KeyEvent event) -> {
@@ -48,7 +49,7 @@ public class GameWindow {
                 case DOWN:  DOWN = false; break;
                 case LEFT:  LEFT  = false; break;
                 case RIGHT: RIGHT  = false; break; 
-                case SPACE: FIRE  = false; break; 
+                case Z: FIRE  = false; break; 
             }
         });
         primaryStage = new Stage();

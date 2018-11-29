@@ -14,25 +14,17 @@ import javafx.animation.AnimationTimer;
  *
  * @author gabri
  */
-public class Level3 extends AnimationTimer {
-    private int timer;
+public class Level3 extends Level {
     private static Level3 instance = null;
     protected Level3(){
-        timer = 0;
-        SpaceImpactRevive.getInstance().setLevel(3);
-        StatusBar.getInstance().addLife();
-        StatusBar.getInstance().addLife();
-        StatusBar.getInstance().addLife();
-        SpaceImpactRevive.getInstance().add(new GameObject("Background"));
-        SpaceImpactRevive.getInstance().add(new GameObject("SpaceShip"));
-        //SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
-        start();
-        
+        super();
+        SpaceImpactRevive.getInstance().setLevel(3); 
     }
     public static Level3 getInstance() {
         if(instance == null)instance = new Level3();
         return instance;
     }
+    @Override
     public void levelTime(){
         timer++;
         System.out.println(timer);
@@ -44,16 +36,5 @@ public class Level3 extends AnimationTimer {
         }
         if(timer==1400)SpaceImpactRevive.getInstance().add(new GameObject("Enemy1"));
         //if(timer==200)SpaceImpactRevive.getInstance().stopBackground();
-    }
-
-    @Override
-    public void handle(long now) {
-        SpaceImpactRevive.getInstance().gameLoop();
-        levelTime();
-    }
-    public void obstacleBarrier(){
-        SpaceImpactRevive.getInstance().add(new GameObject("Obstacle0"));
-        SpaceImpactRevive.getInstance().add(new GameObject("Obstacle140"));
-        SpaceImpactRevive.getInstance().add(new GameObject("Obstacle270"));
     }
 }

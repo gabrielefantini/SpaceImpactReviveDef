@@ -6,13 +6,11 @@
 package view;
 
 import controller.SpaceImpactRevive;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import javafx.scene.layout.GridPane;
 
 
@@ -27,6 +25,7 @@ public class StatusBar extends GridPane{
     private int punteggio = 0;
     private Label score;
     private Button menu;
+    private Button audio;
     
     private StatusBar(){
         try {
@@ -36,6 +35,9 @@ public class StatusBar extends GridPane{
         }
         score = new Label(" Score: ");
         menu = new Button("Menu");
+        audio = new Button("Audio");
+        audio.setFocusTraversable(false);
+        menu.setFocusTraversable(false);
         menu.setCancelButton(true);
         menu.setOnAction((event) -> {
             switch(SpaceImpactRevive.getInstance().getLevel()){
@@ -45,9 +47,15 @@ public class StatusBar extends GridPane{
             }
             Window.getInstance().menuPiccolo();
         });
+        audio.setOnAction((event) -> {SpaceImpactRevive.getInstance().setSound();});
         this.add(menu,0,0);
-        this.add(score,1,0);
-        position = 2;
+        this.add(audio, 1, 0);
+        this.add(score,2,0);
+        score.setMinWidth(100);
+        position = 3;
+        this.setMargin(menu,new Insets(0, 5,0,5));
+        this.setMargin(audio, new Insets(0,400,0,0));
+        this.setMargin(score,new Insets(0,50,0,0));
         
     }
     public static StatusBar getInstance() {
@@ -63,9 +71,10 @@ public class StatusBar extends GridPane{
         this.getChildren().clear();
         score.setText("Score: "+punteggio+" ");
         this.add(menu,0,0);
-        this.add(score,1,0);
+        this.add(audio,1,0);
+        this.add(score,2,0);
         position--;
-        for(int i=2; i<position; i++){
+        for(int i=3; i<position; i++){
             this.add(new ImageView(heart),i,0);
             System.out.println(i);
         }

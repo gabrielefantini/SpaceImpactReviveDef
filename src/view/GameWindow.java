@@ -40,7 +40,7 @@ public class GameWindow {
                 case DOWN:  DOWN = true; break;
                 case LEFT:  LEFT  = true; break;
                 case RIGHT: RIGHT  = true; break; 
-                case Z: FIRE  = true; break; 
+                case SPACE: FIRE  = true; break; 
             }
         });
         scene.setOnKeyReleased((KeyEvent event) -> {
@@ -49,7 +49,7 @@ public class GameWindow {
                 case DOWN:  DOWN = false; break;
                 case LEFT:  LEFT  = false; break;
                 case RIGHT: RIGHT  = false; break; 
-                case Z: FIRE  = false; break; 
+                case SPACE: FIRE  = false; break; 
             }
         });
         primaryStage = new Stage();

@@ -22,12 +22,12 @@ import view.StatusBar;
 public class SpaceImpactRevive {
     private static SpaceImpactRevive instance=null;
     private ArrayList<GameObject> array;
-    private int rateo;
     private int currentLevel;
+    private boolean sound;
     
     private SpaceImpactRevive(){
         this.array = new ArrayList<>();
-        rateo = 0;
+        sound = true;
     }
     
     public static SpaceImpactRevive getInstance(){
@@ -40,11 +40,15 @@ public class SpaceImpactRevive {
     public int getLevel(){
         return currentLevel;
     }
-     public void add(GameObject g){
+    public void add(GameObject g){
         array.add(g);
     }
      
-
+    public void setSound(){
+        if(sound)sound=false;
+        else
+            sound=true;
+    }
     
     public void gameLoop(){
         sync();
@@ -62,7 +66,7 @@ public class SpaceImpactRevive {
                     collisionCheck(g,f);
             }
             g.timer();
-            g.setSound(true);
+            g.setSound(sound);
         }
     }
     

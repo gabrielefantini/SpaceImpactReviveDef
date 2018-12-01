@@ -35,9 +35,7 @@ public class FXMLDocumentMenuPiccoloController implements Initializable {
         }
         
     }
-    public void Impostazioni(){
-        
-    }
+
     public void SalvaEdEsci(){
         
     }

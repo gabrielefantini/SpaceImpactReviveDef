@@ -8,25 +8,36 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="395.9999000000025" prefWidth="546.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FXMLDocumentControllerLivelli">
+<AnchorPane id="AnchorPane" prefHeight="395.9999000000025" prefWidth="772.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FXMLDocumentControllerLivelli">
   <children>
+    <ImageView id="menuLivelli.png" layoutX="-7.0" layoutY="-26.0">
+      <image>
+        <Image url="@../img/menuLivelli.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
     <Pane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.0" style="">
       <children>
+        <Button layoutX="544.0" layoutY="52.0" mnemonicParsing="false" onAction="#selectLevel1" prefHeight="32.9609375" prefWidth="72.74609375" text="Invio">
+          <font>
+            <Font size="16.0" fx:id="x1" />
+          </font>
+        </Button>
         <AnchorPane id="AnchorPane" layoutX="308.0" layoutY="114.0" prefHeight="258.9998779296875">
           <children>
-            <Button layoutX="0.0" layoutY="0.0" mnemonicParsing="false" onAction="#selectLevel1" prefHeight="51.0" prefWidth="184.74609375" text="Level1">
+            <Button layoutX="0.0" layoutY="0.0" mnemonicParsing="false" onAction="#selectLevel1" prefHeight="51.0" prefWidth="184.74609375" text="Livello 1">
               <font>
-                <Font size="16.0" fx:id="x1" />
+                <Font name="Arial" size="16.0" fx:id="x2" />
               </font>
             </Button>
-            <Button font="$x1" layoutX="0.0" layoutY="66.0" mnemonicParsing="false" onAction="#selectLevel2" prefHeight="50.0" prefWidth="184.74609375" text="Level2" />
-            <Button font="$x1" layoutX="0.0" layoutY="129.0" mnemonicParsing="false" onAction="#selectLevel3" prefHeight="50.0" prefWidth="184.74609375" text="Level3" />
-            <Button font="$x1" layoutX="0.0" layoutY="195.0" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="184.74609375" text="Back" />
+            <Button font="$x2" layoutX="0.0" layoutY="66.0" mnemonicParsing="false" onAction="#selectLevel2" prefHeight="50.0" prefWidth="184.74609375" text="Livello 2" />
+            <Button font="$x2" layoutX="0.0" layoutY="129.0" mnemonicParsing="false" onAction="#selectLevel3" prefHeight="50.0" prefWidth="184.74609375" text="Livello 3" />
+            <Button font="$x2" layoutX="0.0" layoutY="195.0" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="184.74609375" text="Indietro" />
           </children>
         </AnchorPane>
-        <Text layoutX="308.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Level">
+        <TextField layoutX="300.0" layoutY="52.0" prefHeight="32.9609375" prefWidth="200.0" />
+        <Text disable="false" fill="BLACK" focusTraversable="false" fontSmoothingType="LCD" layoutX="133.0" layoutY="68.0" scaleX="1.6073138527309991" scaleY="1.8807679696458541" smooth="true" strikethrough="false" stroke="#00a3ff" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.7" style="-fx-background-color:#000000&#10;" text="Nome Giocatore" underline="false">
           <font>
-            <Font size="36.0" />
+            <Font size="12.0" />
           </font>
         </Text>
       </children>

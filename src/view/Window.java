@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -28,6 +29,7 @@ public class Window {
         this.scene = new Scene(root, 800,400);
         primaryStage = new Stage();
         primaryStage.setScene(scene);
+        scene.setFill(new Color(0, 0, 0, 1));
         primaryStage.setResizable(false);
         primaryStage.show();
     }

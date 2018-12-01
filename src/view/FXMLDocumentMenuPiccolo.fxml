@@ -4,18 +4,28 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FXMLDocumentMenuPiccoloController">
+<AnchorPane id="AnchorPane" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" style="" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FXMLDocumentMenuPiccoloController">
   <children>
-    <Pane layoutX="9.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.0000999999975">
+    <ImageView id="menuPiccolo.png" fitHeight="427.0" fitWidth="810.0" layoutX="0.0" layoutY="0.0">
+      <image>
+        <Image url="@../img/menuPiccolo.png" preserveRatio="true" smooth="true" />
+      </image>
+    </ImageView>
+    <Pane layoutX="9.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.0000999999975" style="">
       <children>
-        <AnchorPane layoutX="-4.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.999977929685">
+        <AnchorPane layoutX="-4.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.999977929685" style="">
           <children>
-            <Button layoutX="248.0" layoutY="134.0" mnemonicParsing="false" onAction="#Impostazioni" prefHeight="66.0" prefWidth="296.0" text="Impostazioni" />
-            <Button layoutX="248.0" layoutY="39.0" mnemonicParsing="false" onAction="#Riassumi" prefHeight="66.0" prefWidth="296.0" text="Riassumi" />
-            <Button layoutX="252.0" layoutY="221.0" mnemonicParsing="false" onAction="#SalvaEdEsci" prefHeight="66.0" prefWidth="296.0" text="Salva ed Esci" />
-            <Button layoutX="252.0" layoutY="302.0" mnemonicParsing="false" onAction="#SalvaEMenuIniziale" prefHeight="66.0" prefWidth="296.0" text="Salva e Torna al Menu iniziale" />
+            <Button blendMode="SRC_OVER" cache="true" cacheHint="DEFAULT" cancelButton="false" defaultButton="false" layoutX="248.0" layoutY="62.0" mnemonicParsing="false" onAction="#Riassumi" prefHeight="66.0" prefWidth="296.0" text="Riassumi">
+              <font>
+                <Font name="Arial" size="16.0" fx:id="x1" />
+              </font>
+            </Button>
+            <Button font="$x1" layoutX="248.0" layoutY="167.0" mnemonicParsing="false" onAction="#SalvaEdEsci" prefHeight="66.0" prefWidth="296.0" text="Salva ed Esci" />
+            <Button font="$x1" layoutX="248.0" layoutY="282.0" mnemonicParsing="false" onAction="#SalvaEMenuIniziale" prefHeight="66.0" prefWidth="296.0" text="Salva e Torna al Menu iniziale" />
           </children>
         </AnchorPane>
       </children>

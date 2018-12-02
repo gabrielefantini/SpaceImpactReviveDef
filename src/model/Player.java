@@ -14,6 +14,7 @@ import controller.SpaceImpactRevive;
 public class Player {
     private int life;
     private int score;
+    private String name;
     private static Player instance = null;
     
     private Player(){
@@ -34,5 +35,11 @@ public class Player {
         if(life==1)SpaceImpactRevive.getInstance().GameOver();
         life--;
         SpaceImpactRevive.getInstance().removeHeart();
+    }
+    public void setName(String value){
+        name = value;
+    }
+    public String getName(){
+        return name;
     }
 }

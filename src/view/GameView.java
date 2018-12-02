@@ -116,4 +116,7 @@ public class GameView {
     public void setSound(boolean value){
         sound = value;
     }
+
+    public void setBackground(int i) {
+    }
 }

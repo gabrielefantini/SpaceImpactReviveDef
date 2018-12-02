@@ -17,7 +17,10 @@ public class BackgroundView extends GameView{
     private int c;
     public BackgroundView(){
         super();
-        imageNormal = new Image(BackgroundView.class.getResourceAsStream("/img/Background.png"));
+        try {
+            imageNormal = new Image(BackgroundView.class.getResourceAsStream("/img/Background1.png"));
+        } catch (Exception e) {
+        }
         this.imageDisplayed = new ImageView(imageNormal);
         Space.getInstance().getChildren().add(imageDisplayed);
         imageDisplayed.relocate(0,0);
@@ -34,5 +37,17 @@ public class BackgroundView extends GameView{
         int x = (int)imageDisplayed.getBoundsInParent().getMinX()-c;
         int y =(int)imageDisplayed.getBoundsInParent().getMinY();
         imageDisplayed.relocate(x,y);
+    }
+    @Override
+    public void setBackground(int n){
+        try{
+        switch(n){
+            case 1: imageDisplayed.setImage(new Image(BackgroundView.class.getResourceAsStream("/img/Background1.png")));break;
+            case 2: imageDisplayed.setImage(new Image(BackgroundView.class.getResourceAsStream("/img/Background2.png")));break;
+            case 3: imageDisplayed.setImage(new Image(BackgroundView.class.getResourceAsStream("/img/Background3.png")));break;
+        }
+        }catch(Exception e){
+            System.out.println("view.BackgroundView.setBackground()");
+        }
     }
 }

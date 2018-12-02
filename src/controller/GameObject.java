@@ -90,4 +90,11 @@ public class GameObject {
     public void setSound(boolean value){
         view.setSound(value);
     }
+    public void setBackground(int n){
+        switch(n){
+            case 1 : this.view.setBackground(1);break;
+            case 2 : this.view.setBackground(2);break;
+            case 3 : this.view.setBackground(3);break;
+        }
+    }
 }

@@ -9,7 +9,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+import model.Player;
 
 /**
  *
@@ -17,9 +19,10 @@ import javafx.scene.control.Button;
  */
 public class FXMLDocumentControllerLivelli implements Initializable{
     
-    @FXML
-    private Button button;
     
+    @FXML
+    private TextField playerName;
+            
     @Override
     public void initialize(URL url, ResourceBundle rb) {
       
@@ -41,4 +44,9 @@ public class FXMLDocumentControllerLivelli implements Initializable{
         Window.getInstance().gameWindow();
         Level3.getInstance();
     }
+    public void setPlayerName(){
+        Player.getInstance().setName(playerName.getText());
+        System.out.println(Player.getInstance().getName());
+    }
+    
 }

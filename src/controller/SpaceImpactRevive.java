@@ -36,6 +36,10 @@ public class SpaceImpactRevive {
     }
     public void setLevel(int level){
         currentLevel = level;
+        for(int i = 0; i < array.size(); i++){
+            GameObject g = array.get(i);
+            if(g.getType().equals("Background"))g.setBackground(level);
+        }
     }
     public int getLevel(){
         return currentLevel;

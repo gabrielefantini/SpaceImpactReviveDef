@@ -54,6 +54,20 @@ public class Window {
         } catch (Exception e) {
         }
     }
+    public void menuNavicella(){
+        clear();
+        try {
+            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLMenuNavicella.fxml")));
+        } catch (Exception e) {
+        }
+    }
+    public void menuRecords(){
+        clear();
+        try {
+            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLMenuRecords.fxml")));
+        } catch (Exception e) {
+        }
+    }
     public void menuPiccolo(){
         clear();
         try {

@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import model.Player;
 
 
@@ -63,7 +64,7 @@ public class StatusBar extends GridPane{
         this.setMargin(audio, new Insets(0,5,0,0));
         this.setMargin(playerName,  new Insets(0,295,0,5));
         this.setMargin(score,new Insets(0,50,0,0));
-        playerName.setStyle("fx-");
+        playerName.setFont(Font.font ("Arial"));
         
     }
     public static StatusBar getInstance() {

@@ -14,14 +14,17 @@ import javafx.fxml.Initializable;
  *
  * @author gabri
  */
-public class FXMLDocumentGameOverController implements Initializable {
+public class FXMLMenuNavicellaController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        
+    }
     
+    public void goBack(){
+        Window.getInstance().menuIniziale();
+    }
 }

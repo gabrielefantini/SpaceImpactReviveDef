@@ -21,8 +21,8 @@ public class SpaceShipView extends GameView{
         super();
         
         try {
-            this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal.png"));
-            this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker.png"));
+            this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal3.png"));
+            this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker3.png"));
             this.imageDisplayed = new ImageView(imageNormal);
             fireSound = new AudioClip(SpaceShipView.class.getResource("/audio/laser10.wav").toString());
         } catch (Exception e) {

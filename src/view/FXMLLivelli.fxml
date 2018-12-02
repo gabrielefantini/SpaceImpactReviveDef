@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="395.9999000000025" prefWidth="772.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FXMLDocumentControllerLivelli">
+<AnchorPane id="AnchorPane" prefHeight="395.9999000000025" prefWidth="772.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FXMLControllerLivelli">
   <children>
     <ImageView id="menuLivelli.png" fitHeight="523.0" fitWidth="826.0000999999975" layoutX="-7.0" layoutY="-26.0">
       <image>

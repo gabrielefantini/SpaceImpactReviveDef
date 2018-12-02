@@ -18,7 +18,7 @@ import model.Player;
  *
  * @author gabri
  */
-public class FXMLDocumentControllerLivelli implements Initializable{
+public class FXMLControllerLivelli implements Initializable{
     
     @FXML
     private Text text;

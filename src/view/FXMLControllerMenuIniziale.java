@@ -16,7 +16,7 @@ import javafx.scene.control.Button;
  *
  * @author gabri
  */
-public class FXMLDocumentControllerMenuIniziale implements Initializable{
+public class FXMLControllerMenuIniziale implements Initializable{
     
     @FXML
     private Button button;
@@ -32,10 +32,11 @@ public class FXMLDocumentControllerMenuIniziale implements Initializable{
         public void continueGame(){
             System.out.println("continua gioco");
         }
-        public void settings(){
+        public void selectShip(){
+            Window.getInstance().menuNavicella();
         }
         public void records(){
-            System.out.println("records");
+            Window.getInstance().menuRecords();
         }
     
 }

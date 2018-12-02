@@ -17,7 +17,7 @@ import javafx.scene.control.Button;
  *
  * @author gabri
  */
-public class FXMLDocumentMenuPiccoloController implements Initializable {
+public class FXMLMenuPiccoloController implements Initializable {
 
     @FXML
     private Button button;

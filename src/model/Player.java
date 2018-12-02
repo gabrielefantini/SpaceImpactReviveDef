@@ -18,6 +18,7 @@ public class Player {
     private static Player instance = null;
     
     private Player(){
+        name = "sconosciuto";
         score = 0;
         life=3;
     }

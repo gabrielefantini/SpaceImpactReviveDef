@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import model.Player;
 
 
 /**
@@ -24,6 +25,7 @@ public class StatusBar extends GridPane{
     private int position;
     private int punteggio = 0;
     private Label score;
+    private Label playerName;
     private Button menu;
     private Button audio;
     
@@ -36,6 +38,7 @@ public class StatusBar extends GridPane{
         score = new Label(" Score: ");
         menu = new Button("Menu");
         audio = new Button("Audio");
+        playerName = new Label(Player.getInstance().getName());
         audio.setFocusTraversable(false);
         menu.setFocusTraversable(false);
         menu.setCancelButton(true);
@@ -50,12 +53,17 @@ public class StatusBar extends GridPane{
         audio.setOnAction((event) -> {SpaceImpactRevive.getInstance().setSound();});
         this.add(menu,0,0);
         this.add(audio, 1, 0);
-        this.add(score,2,0);
+        this.add(playerName, 2, 0);
+        this.add(score,3,0);
         score.setMinWidth(100);
-        position = 3;
+        playerName.setMinWidth(100);
+        playerName.setMaxWidth(100);
+        position = 4;
         this.setMargin(menu,new Insets(0, 5,0,5));
-        this.setMargin(audio, new Insets(0,400,0,0));
+        this.setMargin(audio, new Insets(0,5,0,0));
+        this.setMargin(playerName,  new Insets(0,295,0,5));
         this.setMargin(score,new Insets(0,50,0,0));
+        playerName.setStyle("fx-");
         
     }
     public static StatusBar getInstance() {
@@ -72,9 +80,10 @@ public class StatusBar extends GridPane{
         score.setText("Score: "+punteggio+" ");
         this.add(menu,0,0);
         this.add(audio,1,0);
-        this.add(score,2,0);
+        this.add(playerName, 2, 0);
+        this.add(score,3,0);
         position--;
-        for(int i=3; i<position; i++){
+        for(int i=4; i<position; i++){
             this.add(new ImageView(heart),i,0);
             System.out.println(i);
         }
@@ -82,5 +91,8 @@ public class StatusBar extends GridPane{
     public void score(){
         punteggio++;
         score.setText("Score: "+punteggio+" ");
+    }
+    public void gameOver(){
+        this.menu.setDisable(true);
     }
 }

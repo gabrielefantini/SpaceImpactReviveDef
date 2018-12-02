@@ -66,5 +66,6 @@ public class GameWindow {
             window.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLDocumentGameOver.fxml")));
         } catch (Exception e) {
         }
+        StatusBar.getInstance().gameOver();
     }
 }

@@ -34,7 +34,12 @@
             <Button font="$x2" layoutX="0.0" layoutY="195.0" mnemonicParsing="false" onAction="#goBack" prefHeight="50.0" prefWidth="184.74609375" text="Indietro" />
           </children>
         </AnchorPane>
-        <TextField fx:id="playerName" layoutX="300.0" layoutY="52.0"  prefHeight="32.9609375" prefWidth="200.0" />
+        <TextField fx:id="playerName" layoutX="300.0" layoutY="52.0" prefHeight="32.9609375" prefWidth="200.0" />
+        <Text fx:id="text" fill="#ff3333" layoutX="96.0" layoutY="65.0" scaleX="2.7617787188988885" scaleY="2.0651003426333823" stroke="GREY" strokeType="OUTSIDE" strokeWidth="2.4" text="Sconosciuto">
+          <font>
+            <Font name="System Bold" size="12.0" />
+          </font>
+        </Text>
       </children>
     </Pane>
   </children>

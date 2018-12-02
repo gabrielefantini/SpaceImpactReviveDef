@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 import model.Player;
 
@@ -19,7 +20,8 @@ import model.Player;
  */
 public class FXMLDocumentControllerLivelli implements Initializable{
     
-    
+    @FXML
+    private Text text;
     @FXML
     private TextField playerName;
             
@@ -45,7 +47,11 @@ public class FXMLDocumentControllerLivelli implements Initializable{
         Level3.getInstance();
     }
     public void setPlayerName(){
-        Player.getInstance().setName(playerName.getText());
+        String name = playerName.getText();
+        if(name.length()>=20)name = name.substring(0, 19);
+        if(name.equals(""))name="Sconosciuto";
+        Player.getInstance().setName(name);
+        text.setText(Player.getInstance().getName());
         System.out.println(Player.getInstance().getName());
     }
     

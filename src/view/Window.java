@@ -43,14 +43,14 @@ public class Window {
     public void menuIniziale(){
         clear();
         try {
-            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLDocumentMenuIniziale.fxml")));
+            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLMenuIniziale.fxml")));
         } catch (Exception e) {
         }
     }
     public void menuLivelli(){
         clear();
         try {
-            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLDocumentLivelli.fxml")));
+            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLLivelli.fxml")));
         } catch (Exception e) {
         }
     }
@@ -72,7 +72,7 @@ public class Window {
         clear();
         try {
             primaryStage.show();
-            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLDocumentMenuPiccolo.fxml")));
+            this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLMenuPiccolo.fxml")));
         } catch (Exception e) {
             System.out.println("view.Window.menuPiccolo()");
         }

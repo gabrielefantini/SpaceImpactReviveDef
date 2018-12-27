@@ -5,16 +5,11 @@
  */
 package model;
 
-import model.GameModel;
-
-/**
- *
- * @author gabri
- */
 public class ProjectileModel extends GameModel{
     public ProjectileModel(){
         super();
         life = 3;
         IMMUNITY = 300;
+        type = "Projectile";        
     } 
 }

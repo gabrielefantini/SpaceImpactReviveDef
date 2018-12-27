@@ -5,7 +5,7 @@
  */
 package view;
 
-import controller.SpaceImpactRevive;
+import controller.Controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;

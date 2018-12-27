@@ -15,5 +15,6 @@ public class Enemy1Model extends EnemyModel{
         super();
         life = 2;
         IMMUNITY=150;
+        type = "Enemy1";
     }
 }

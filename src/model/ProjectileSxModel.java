@@ -5,14 +5,11 @@
  */
 package model;
 
-/**
- *
- * @author gabri
- */
 public class ProjectileSxModel extends ProjectileModel{
     public ProjectileSxModel(){
        super();
        life = 1;
        IMMUNITY = 0;
+        type = "ProjectileSx";       
     }
 }

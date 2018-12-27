@@ -12,5 +12,6 @@ package model;
 public class BackgroundModel extends GameModel{
     public BackgroundModel(){
         super();
+        type = "Background";
     }
 }

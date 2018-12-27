@@ -5,34 +5,33 @@
  */
 package model;
 
-import controller.GameObject;
-
+import controller.Controller;
 
 /**
  *
  * @author gabri
  */
-public class GameModel {
+public class GameModel implements IGameModel{
+    
     protected int life;
     protected int IMMUNITY;
     protected int immunity;
-
+    protected String type;
     
     public GameModel(){
         life = 1;
     }
-    public void collide(){
-        getDamage();
-    }
+
     public void getDamage(){
        if(immunity > 0){
             return;
         }
-        else{
-            if(life > 0){                            
-                life--;
-                immunity = IMMUNITY;
-            }
+        if(life > 0){                            
+            life--;
+            immunity = IMMUNITY;
+        }
+        if(life==0){
+            die();
         } 
     }
     public void addLife(){
@@ -48,5 +47,19 @@ public class GameModel {
         if(immunity>0)return true;
         else
             return false;
+    }
+
+    public int getHashId() {
+        return this.hashCode();
+    }
+
+    private void die() {
+        Controller.getInstance().removeViewElementById(this.getHashId());
+    }
+
+    public void loop() {
+        immunityTimer();
+        if(flicker())Controller.getInstance().startFlicker(this.getHashId());
+        if(!flicker())Controller.getInstance().stopFlicker(this.getHashId());
     }
 }

@@ -5,15 +5,10 @@
  */
 package view;
 
-
 /**
  *
- * @author gabri
+ * @author gabriele fantini
  */
-public class Bonus1View extends BonusView{
-    
-    public Bonus1View(int id, String typ) {
-        super(id, typ);
-    }
+public interface IView {
     
 }

@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
-
+package model;
 
 /**
  *
- * @author gabri
+ * @author gabriele fantini
  */
-public class Bonus1View extends BonusView{
-    
-    public Bonus1View(int id, String typ) {
-        super(id, typ);
-    }
-    
+public interface IGameModel {
+    public void loop();
 }

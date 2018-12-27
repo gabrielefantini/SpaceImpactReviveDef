@@ -5,8 +5,8 @@
  */
 package view;
 
-import controller.GameObject;
-import controller.SpaceImpactRevive;
+
+import controller.Controller;
 import javafx.geometry.Bounds;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,26 +16,35 @@ import javafx.scene.media.AudioClip;
  *
  * @author gabri
  */
-public class GameView {
-    protected boolean sound;
+public class GameView implements IGameView{
+    protected static boolean sound = true;
     protected Image imageNormal;
     protected Image imageFlicker;
     protected ImageView imageDisplayed;
     protected AudioClip fireSound;
     protected int a;
     private int b;
+    private int hashId;
+    private String type;
+    private boolean flicker;
     
-    public GameView(){
+    public GameView(int id, String typ){
         a=0;b=0;
-        sound = true;
+        hashId = id;
+        type = typ;
+        flicker = false;
     }
    
     public void animationLoop(){
         
     }
 
-    public boolean outOfSpace() {
-        return this.imageDisplayed.getBoundsInParent().getMaxX()<=-20 || this.imageDisplayed.getBoundsInParent().getMinX()>=820;
+
+    public void outOfSpace() {
+        if(this.imageDisplayed.getBoundsInParent().getMaxX()<=-20 || this.imageDisplayed.getBoundsInParent().getMinX()>=820){
+            this.remove();
+            View.getInstance().removeElementById(hashId);
+        }
     }
     public void remove(){
         Space.getInstance().getChildren().remove(imageDisplayed);
@@ -43,6 +52,9 @@ public class GameView {
 
     public Bounds getBounds() {
         return imageDisplayed.getBoundsInParent();
+    }
+    public void startFlicker(){
+        flicker=true;
     }
     public void flicker(){
         if(a<15){
@@ -62,6 +74,7 @@ public class GameView {
     public void stopFlicker(){
         imageDisplayed.setImage(imageNormal);
         a=0;b=0;
+        flicker = false;
     }
      public void moveElementBy(int dx, int dy){
         if(dx == 0 && dy == 0) return;        
@@ -88,7 +101,7 @@ public class GameView {
             x = (int)this.getBounds().getMaxX()+1;
             y = (int)(this.getBounds().getMaxY()-this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileDx");
-            SpaceImpactRevive.getInstance().add(p);
+            Controller.getInstance().add(p);
             p.set(x, y);
             System.out.println("view.GameView.fire()");
         }
@@ -97,13 +110,13 @@ public class GameView {
             x = (int)this.getBounds().getMinX()- 110;
             y = (int)(this.getBounds().getMaxY()- this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileSx");
-            SpaceImpactRevive.getInstance().add(p);p.set(x, y);
+            Controller.getInstance().add(p);p.set(x, y);
             }else
             if(direction ==-1){
             x = (int)this.getBounds().getMinX()- 20;
             y = (int)(this.getBounds().getMaxY()- this.getBounds().getHeight()/2);
             GameObject p = new GameObject("ProjectileSx1");
-            SpaceImpactRevive.getInstance().add(p);p.set(x, y);  
+            Controller.getInstance().add(p);p.set(x, y);  
             }
         }
             
@@ -119,4 +132,29 @@ public class GameView {
 
     public void setBackground(int i) {
     }
+    public int getHashId(){
+        return hashId;
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
+    }
+
+    @Override
+    public boolean intersect(GameView b) {
+        return this.getBounds().intersects(b.getBounds());
+    }
+    public void setHashId(int id){
+        this.hashId= id;
+    }
+
+    void loop() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void loop() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

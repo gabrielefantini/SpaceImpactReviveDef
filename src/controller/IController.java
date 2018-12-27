@@ -3,17 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package controller;
 
+public interface IController {
 
-/**
- *
- * @author gabri
- */
-public class Bonus1View extends BonusView{
-    
-    public Bonus1View(int id, String typ) {
-        super(id, typ);
-    }
-    
 }

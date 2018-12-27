@@ -5,15 +5,13 @@
  */
 package model;
 
-/**
- *
- * @author gabri
- */
+
 public class SpaceShipModel extends GameModel{
     public SpaceShipModel(){
         super();
         life = 3;
         IMMUNITY = 300;
+        type = "SpaceShip";        
         System.out.println("model.SpaceShipModel.<init>()");
     }
     @Override

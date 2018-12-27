@@ -13,6 +13,7 @@ public class ObstacleModel extends EnemyModel{
     public ObstacleModel(){
         super();
         life=2;
-        IMMUNITY=150;
+        IMMUNITY=150;        
+        type = "Obstacle";
     }
 }

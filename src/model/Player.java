@@ -5,7 +5,7 @@
  */
 package model;
 
-import controller.SpaceImpactRevive;
+import controller.Controller;
 
 /**
  *
@@ -33,9 +33,8 @@ public class Player {
         return score;
     }
     public void removeLife() {
-        if(life==1)SpaceImpactRevive.getInstance().GameOver();
+        if(life==1)Controller.getInstance().GameOver();
         life--;
-        SpaceImpactRevive.getInstance().removeHeart();
     }
     public void setName(String value){
         name = value;

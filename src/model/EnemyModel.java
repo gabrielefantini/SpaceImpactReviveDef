@@ -16,6 +16,6 @@ public class EnemyModel extends GameModel{
         super();
         life = 3;
         IMMUNITY = 200;
-        
+        type = "Enemy";
     }
 }

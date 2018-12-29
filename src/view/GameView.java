@@ -100,8 +100,8 @@ public class GameView implements IGameView{
         if(direction >0){
             x = (int)this.getBounds().getMaxX()+1;
             y = (int)(this.getBounds().getMaxY()-this.getBounds().getHeight()/2);
-            GameObject p = new GameObject("ProjectileDx");
-            Controller.getInstance().add(p);
+            int id = Controller.getInstance().addElement("ProjectileDx");
+            GameView p = View.getInstance().getElementById(id);
             p.set(x, y);
             System.out.println("view.GameView.fire()");
         }
@@ -109,14 +109,16 @@ public class GameView implements IGameView{
             if(direction == -5){
             x = (int)this.getBounds().getMinX()- 110;
             y = (int)(this.getBounds().getMaxY()- this.getBounds().getHeight()/2);
-            GameObject p = new GameObject("ProjectileSx");
-            Controller.getInstance().add(p);p.set(x, y);
+            int id = Controller.getInstance().addElement("ProjectileSx");
+            GameView p = View.getInstance().getElementById(id);
+            p.set(x, y);
             }else
             if(direction ==-1){
             x = (int)this.getBounds().getMinX()- 20;
             y = (int)(this.getBounds().getMaxY()- this.getBounds().getHeight()/2);
-            GameObject p = new GameObject("ProjectileSx1");
-            Controller.getInstance().add(p);p.set(x, y);  
+             int id = Controller.getInstance().addElement("ProjectileSx1");
+            GameView p = View.getInstance().getElementById(id);
+            p.set(x, y);  
             }
         }
             
@@ -149,12 +151,11 @@ public class GameView implements IGameView{
         this.hashId= id;
     }
 
-    void loop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void loop() {
+    public void loop() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public void collide(){
+        Controller.getInstance().collide(this.hashId);
+    }
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.animation.AnimationTimer;
 import model.BackgroundModel;
 import model.Enemy1Model;
 import model.Enemy2Model;
@@ -24,17 +25,23 @@ import view.View;
 
 public class Controller implements IController{
     private static Controller instance=null;
+    private AnimationTimer timer;
+   
     private Controller(){
         Model.getInstance();
         View.getInstance();
-        
+        timer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                gameLoop();
+            }
+        };
     }
-    
     public static Controller getInstance(){
         if(instance==null)instance = new Controller();
         return instance;
     }
-    public void addElement(String type){
+    public int addElement(String type){
         int id;
         switch (type){
             case "SpaceShip" :  id = Model.getInstance().addElement(new SpaceShipModel()); 
@@ -60,6 +67,7 @@ public class Controller implements IController{
             case "Obstacle270" :    id = Model.getInstance().addElement(new ObstacleModel()); 
                                         View.getInstance().addElement(new ObstacleView(270),id);break;
         }
+        return id;
     }
     public void removeViewElementById(int id){
         View.getInstance().getElementById(id).remove();
@@ -78,5 +86,18 @@ public class Controller implements IController{
     public void score(){
         Player.getInstance().score();
         StatusBar.getInstance().score();
+    }
+    public void start(){
+        timer.start();
+    }
+    public void stop(){
+        timer.stop();
+    }
+    public void gameLoop(){
+        Model.getInstance().toDo();
+        View.getInstance().toDo();
+    }
+    public void collide(int id){
+        Model.getInstance().getElementById(id).getDamage();
     }
 }

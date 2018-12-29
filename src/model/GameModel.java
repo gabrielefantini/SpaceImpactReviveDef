@@ -20,6 +20,7 @@ public class GameModel implements IGameModel{
     
     public GameModel(){
         life = 1;
+        immunity=0;
     }
 
     public void getDamage(){

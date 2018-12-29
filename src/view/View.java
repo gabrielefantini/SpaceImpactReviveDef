@@ -6,6 +6,7 @@
 package view;
 
 
+import controller.Controller;
 import java.util.ArrayList;
 
 /**
@@ -59,7 +60,7 @@ public class View implements IView{
                     a.getType().equals("Obstacle0") || b.getType().equals("Obstacle0")||
                     a.getType().equals("Obstacle140") || b.getType().equals("Obstacle140")||
                     a.getType().equals("Obstacle270") || b.getType().equals("Obstacle270"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
-                score();
+                Controller.getInstance().score();
         }
     }
 }

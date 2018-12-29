@@ -10,5 +10,7 @@ package model;
  * @author gabriele fantini
  */
 public interface IModel {
+    public int addElement(GameModel x);
+    public GameModel getElementById(int hashId);
     public void toDo();
 }

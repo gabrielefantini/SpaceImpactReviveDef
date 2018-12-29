@@ -8,6 +8,7 @@ public interface IGameView {
     public void outOfSpace();
     public void remove();
     public Bounds getBounds();
+    public void startFlicker();
     public void flicker();
     public void stopFlicker();
     public void moveElementBy(int dx, int dy);
@@ -18,4 +19,7 @@ public interface IGameView {
     public int getHashId();
     public String getType();
     public boolean intersect(GameView b);
+    public void setHashId(int id);
+    public void loop();
+    public void collide();
 }

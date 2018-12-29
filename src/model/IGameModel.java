@@ -10,5 +10,12 @@ package model;
  * @author gabriele fantini
  */
 public interface IGameModel {
+    public void getDamage();
+    public void addLife();
+    public int getLife();
+    public void immunityTimer();
+    public boolean flicker();
+    public int getHashId();
+    public void die();
     public void loop();
 }

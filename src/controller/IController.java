@@ -8,5 +8,18 @@ package controller;
 
 
 public interface IController{
-
+    public int addElement(String type);
+    public void removeViewElementById(int id);
+    public void GameOver();
+    public void startFlicker(int id);
+    public void stopFlicker(int id);
+    public void score();
+    public void start();
+    public void stop();
+    public void gameLoop();
+    public void collide(int id);
+    public void levelTimer();
+    public void setLevel(int i);
+    public int getLevel();
+    public void removeHeart();
 }

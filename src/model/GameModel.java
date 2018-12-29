@@ -54,7 +54,7 @@ public class GameModel implements IGameModel{
         return this.hashCode();
     }
 
-    private void die() {
+    public void die() {
         Controller.getInstance().removeViewElementById(this.getHashId());
     }
 

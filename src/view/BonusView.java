@@ -12,8 +12,9 @@ package view;
  */
 public class BonusView extends GameView{
     
-    public BonusView(int id, String typ) {
-        super(id, typ);
+    public BonusView() {
+        super();
+        type = "Bonus";
     }
     
 }

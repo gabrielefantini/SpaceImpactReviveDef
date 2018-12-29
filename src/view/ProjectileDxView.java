@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 public class ProjectileDxView extends GameView{
     public ProjectileDxView(){
         super();
+        type = "ProjectileDx";
         imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileDx.png"));
         this.imageDisplayed = new ImageView(imageNormal);
         Space.getInstance().getChildren().add(imageDisplayed);

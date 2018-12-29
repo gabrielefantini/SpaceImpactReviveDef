@@ -14,9 +14,7 @@ public interface IGameView {
     public void moveElementTo(double x, double y);
     public void fire(int direction);
     public void set(int x, int y);
-    public void stopBackground();
     public void setSound(boolean value);
-    public void setBackground(int i);
     public int getHashId();
     public String getType();
     public boolean intersect(GameView b);

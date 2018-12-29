@@ -19,6 +19,7 @@ public class Enemy1View extends EnemyView{
     private int b;
     public Enemy1View(){
         super();
+        type = "Enemy1";
         a=0;
         b=0;
         

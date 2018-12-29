@@ -15,6 +15,9 @@ import view.BackgroundView;
 import view.Enemy1View;
 import view.Enemy2View;
 import view.EnemyView;
+import view.Level1;
+import view.Level2;
+import view.Level3;
 import view.ObstacleView;
 import view.ProjectileDxView;
 import view.ProjectileSxView;
@@ -42,7 +45,7 @@ public class Controller implements IController{
         return instance;
     }
     public int addElement(String type){
-        int id;
+        int id = 0;
         switch (type){
             case "SpaceShip" :  id = Model.getInstance().addElement(new SpaceShipModel()); 
                                         View.getInstance().addElement(new SpaceShipView(),id);break;
@@ -94,10 +97,30 @@ public class Controller implements IController{
         timer.stop();
     }
     public void gameLoop(){
+        levelTimer();
         Model.getInstance().toDo();
         View.getInstance().toDo();
     }
     public void collide(int id){
         Model.getInstance().getElementById(id).getDamage();
     }
+    public void levelTimer(){
+        int i = Player.getInstance().getLevel();
+        switch(i){
+            case 1: Level1.getInstance().levelTime();break;
+            case 2: Level2.getInstance().levelTime();break;
+            case 3: Level3.getInstance().levelTime();break;
+        }
+    }
+    public void setLevel(int i){
+        Player.getInstance().setLevel(i);
+    }
+    public int getLevel(){
+        return Player.getInstance().getLevel();
+    }
+
+    public void removeHeart() {
+        StatusBar.getInstance().removeLife();
+    }
 }
+

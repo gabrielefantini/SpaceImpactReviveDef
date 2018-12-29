@@ -14,11 +14,14 @@ import java.util.ArrayList;
  * @author gabriele fantini
  */
 public class View implements IView{
-     private static View instance = null;
+    private static View instance = null;
     private ArrayList<GameView> array;
+    
+    private boolean sound;
     
     private View(){
         array = new ArrayList<GameView>();
+        sound = true;
     }
     public static View getInstance(){
         if(instance==null)instance=new View();
@@ -38,9 +41,10 @@ public class View implements IView{
             if(array.get(i).getHashId()==hashId)array.remove(i);
     }
     public void toDo() {
-        for(int i = 0; i<array.size(); i++)
+        for(int i = 0; i<array.size(); i++){
+            array.get(i).setSound(sound);
             array.get(i).loop();
-        
+        }
         for(int i = 0; i < array.size(); i++){
             GameView g = array.get(i);
             for(int l = 0; l < array.size(); l++){
@@ -62,5 +66,9 @@ public class View implements IView{
                     a.getType().equals("Obstacle270") || b.getType().equals("Obstacle270"))//un nemico è stato colpito da qualcosa e quindi ottengo un punto
                 Controller.getInstance().score();
         }
+    }
+
+    public void setSound() {
+        sound = !sound;
     }
 }

@@ -18,6 +18,7 @@ public class EnemyView extends GameView{
     private int rateo;
     public EnemyView(){
         super();
+        type ="Enemy";
         this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/BigEnemy.png"));
         this.imageDisplayed = new ImageView(imageNormal);
         

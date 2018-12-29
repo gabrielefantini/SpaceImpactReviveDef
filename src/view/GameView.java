@@ -25,13 +25,11 @@ public class GameView implements IGameView{
     protected int a;
     private int b;
     private int hashId;
-    private String type;
-    private boolean flicker;
+    protected String type;
+    protected boolean flicker;
     
-    public GameView(int id, String typ){
+    public GameView(){
         a=0;b=0;
-        hashId = id;
-        type = typ;
         flicker = false;
     }
    
@@ -127,13 +125,11 @@ public class GameView implements IGameView{
     public void set(int x, int y){
         this.imageDisplayed.relocate(x, y);
     }
-    public void stopBackground(){}
     public void setSound(boolean value){
         sound = value;
     }
 
-    public void setBackground(int i) {
-    }
+
     public int getHashId(){
         return hashId;
     }
@@ -152,7 +148,7 @@ public class GameView implements IGameView{
     }
 
     public void loop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        animationLoop();
     }
     
     public void collide(){

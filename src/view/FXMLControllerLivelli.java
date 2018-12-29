@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -36,14 +37,17 @@ public class FXMLControllerLivelli implements Initializable{
     
     public void selectLevel1(){
        Window.getInstance().gameWindow();
+       Player.getInstance().setLevel(1);
        Level1.getInstance();
     }
     public void selectLevel2(){
         Window.getInstance().gameWindow();
+        Player.getInstance().setLevel(2);
         Level2.getInstance();
     }
     public void selectLevel3(){        
         Window.getInstance().gameWindow();
+        Player.getInstance().setLevel(3);
         Level3.getInstance();
     }
     public void setPlayerName(){

@@ -19,7 +19,7 @@ public class SpaceShipView extends GameView{
     private int RATEO;
     public SpaceShipView(){ 
         super();
-        
+        type = "SpaceShip";
         try {
             this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal3.png"));
             this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker3.png"));
@@ -43,6 +43,7 @@ public class SpaceShipView extends GameView{
         if(GameWindow.FIRE && rateo == 0){fire(1);if(sound)fireSound.play(0.8); rateo = RATEO;} 
         if(rateo>0)rateo--;
         moveElementBy(dx,dy);
+        if(flicker)flicker();
         
     }
     public void setRateo(int x){

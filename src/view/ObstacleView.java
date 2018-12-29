@@ -13,6 +13,11 @@ public class ObstacleView extends EnemyView{
     private int counter;
     public ObstacleView(int y){
         super();
+        switch (y){
+            case 0: type = "Obstacle0";break;
+            case 140: type = "Obstacle140";break;
+            case 270: type = "Obstacle270";break;
+        }
         try {
             this.imageNormal = new Image(ObstacleView.class.getResourceAsStream("/img/1 (1).png"));
 

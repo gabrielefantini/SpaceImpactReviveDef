@@ -28,12 +28,7 @@ public class FXMLMenuPiccoloController implements Initializable {
     }    
     public void Riassumi(){
         Window.getInstance().gameWindow();
-        switch (Controller.getInstance().getLevel()){
-            case 1: Level1.getInstance().start();break;
-            case 2: Level2.getInstance().start();break;
-            case 3: Level3.getInstance().start();break;
-        }
-        
+        Controller.getInstance().start();
     }
 
     public void SalvaEdEsci(){

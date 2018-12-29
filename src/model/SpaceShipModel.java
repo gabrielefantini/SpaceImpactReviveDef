@@ -5,6 +5,8 @@
  */
 package model;
 
+import controller.Controller;
+
 
 public class SpaceShipModel extends GameModel{
     public SpaceShipModel(){
@@ -23,8 +25,15 @@ public class SpaceShipModel extends GameModel{
             if(life > 0){                            
                 life--;
                 Player.getInstance().removeLife();
+                Controller.getInstance().removeHeart();
                 immunity = IMMUNITY;
             }
         } 
+    }
+    @Override
+    public void loop(){
+        immunityTimer();
+        if(flicker())Controller.getInstance().startFlicker(this.getHashId());
+        if(!flicker())Controller.getInstance().stopFlicker(this.getHashId());
     }
 }

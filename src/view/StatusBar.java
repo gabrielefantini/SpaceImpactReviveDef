@@ -44,14 +44,10 @@ public class StatusBar extends GridPane{
         menu.setFocusTraversable(false);
         menu.setCancelButton(true);
         menu.setOnAction((event) -> {
-            switch(Controller.getInstance().getLevel()){
-                case 1: Level1.getInstance().stop();break;
-                case 2: Level2.getInstance().stop();break;
-                case 3: Level3.getInstance().stop();break;
-            }
+            Controller.getInstance().stop();
             Window.getInstance().menuPiccolo();
         });
-        audio.setOnAction((event) -> {Controller.getInstance().setSound();});
+        audio.setOnAction((event) -> {View.getInstance().setSound();});
         this.add(menu,0,0);
         this.add(audio, 1, 0);
         this.add(playerName, 2, 0);

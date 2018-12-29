@@ -12,6 +12,7 @@ import controller.Controller;
  * @author gabri
  */
 public class Player {
+    private int level;
     private int life;
     private int score;
     private String name;
@@ -41,5 +42,11 @@ public class Player {
     }
     public String getName(){
         return name;
+    }
+    public int getLevel(){
+        return level;
+    }
+    public void setLevel(int i){
+        level = i;
     }
 }

@@ -60,7 +60,5 @@ public class GameModel implements IGameModel{
 
     public void loop() {
         immunityTimer();
-        if(flicker())Controller.getInstance().startFlicker(this.getHashId());
-        if(!flicker())Controller.getInstance().stopFlicker(this.getHashId());
     }
 }

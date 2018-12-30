@@ -40,7 +40,7 @@ public class Controller implements IController{
             }
         };
     }
-    public static Controller getInstance(){
+    public static IController getInstance(){
         if(instance==null)instance = new Controller();
         return instance;
     }

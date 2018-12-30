@@ -23,7 +23,7 @@ public class View implements IView{
         array = new ArrayList<GameView>();
         sound = true;
     }
-    public static View getInstance(){
+    public static IView getInstance(){
         if(instance==null)instance=new View();
         return instance;
     }

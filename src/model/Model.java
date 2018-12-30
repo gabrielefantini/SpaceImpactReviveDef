@@ -18,7 +18,7 @@ public class Model implements IModel{
     private Model(){
         array = new ArrayList<GameModel>();
     }
-    public static Model getInstance(){
+    public static IModel getInstance(){
         if(instance==null)instance=new Model();
         return instance;
     }

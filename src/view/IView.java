@@ -16,4 +16,6 @@ public interface IView {
     public void toDo();
     public void collisionCheck(GameView a, GameView b);
     public void setSound();
+    public void levelTime(int i);
+    public void removeLife();
 }

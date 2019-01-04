@@ -3,17 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package controller;
 
 /**
  *
  * @author gabriele fantini
  */
-public interface IModel {
-    public int addElement(GameModel x);
-    public GameModel getElementById(int hashId);
-    public void toDo();
+public interface IControllerForModel {
+
     public void score();
+
+    public void toDo();
+    
+    public void collide(int id);
+
     public int getLevel();
+
     public void setLevel(int i);
+    
+    public int addElement(String type);
 }

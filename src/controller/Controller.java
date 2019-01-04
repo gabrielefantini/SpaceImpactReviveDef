@@ -1,29 +1,6 @@
 package controller;
 
 import javafx.animation.AnimationTimer;
-import model.BackgroundModel;
-import model.Enemy1Model;
-import model.Enemy2Model;
-import model.EnemyModel;
-import model.Model;
-import model.ObstacleModel;
-import model.Player;
-import model.ProjectileDxModel;
-import model.ProjectileSxModel;
-import model.SpaceShipModel;
-import view.BackgroundView;
-import view.Enemy1View;
-import view.Enemy2View;
-import view.EnemyView;
-import view.Level1;
-import view.Level2;
-import view.Level3;
-import view.ObstacleView;
-import view.ProjectileDxView;
-import view.ProjectileSxView;
-import view.SpaceShipView;
-import view.StatusBar;
-import view.View;
 
 
 public class Controller implements IController{
@@ -31,8 +8,8 @@ public class Controller implements IController{
     private AnimationTimer timer;
    
     private Controller(){
-        Model.getInstance();
-        View.getInstance();
+        ControllerForModel.getInstance();
+        ControllerForView.getInstance();
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -44,83 +21,94 @@ public class Controller implements IController{
         if(instance==null)instance = new Controller();
         return instance;
     }
+    @Override
     public int addElement(String type){
         int id = 0;
         switch (type){
-            case "SpaceShip" :  id = Model.getInstance().addElement(new SpaceShipModel()); 
-                                        View.getInstance().addElement(new SpaceShipView(),id);break;
-            case "Enemy" :  id = Model.getInstance().addElement(new EnemyModel()); 
-                                        View.getInstance().addElement(new EnemyView(),id);break;
-            case "Enemy1" : id = Model.getInstance().addElement(new Enemy1Model()); 
-                                        View.getInstance().addElement(new Enemy1View(),id);break;
-            case "Enemy2" : id = Model.getInstance().addElement(new Enemy2Model()); 
-                                        View.getInstance().addElement(new Enemy2View(),id);break;
-            case "ProjectileDx" :   id = Model.getInstance().addElement(new ProjectileDxModel()); 
-                                        View.getInstance().addElement(new ProjectileDxView(),id);break;
-            case "ProjectileSx" :   id = Model.getInstance().addElement(new ProjectileSxModel()); 
-                                        View.getInstance().addElement(new ProjectileSxView(0),id);break;
-            case "ProjectileSx1" :   id = Model.getInstance().addElement(new ProjectileSxModel()); 
-                                        View.getInstance().addElement(new ProjectileSxView(1),id);break;
-            case "Background" : id = Model.getInstance().addElement(new BackgroundModel()); 
-                                        View.getInstance().addElement(new BackgroundView(),id);break;
-            case "Obstacle0" :  id = Model.getInstance().addElement(new ObstacleModel()); 
-                                        View.getInstance().addElement(new ObstacleView(0),id);break;
-            case "Obstacle140" :    id = Model.getInstance().addElement(new ObstacleModel()); 
-                                        View.getInstance().addElement(new ObstacleView(140),id);break;
-            case "Obstacle270" :    id = Model.getInstance().addElement(new ObstacleModel()); 
-                                        View.getInstance().addElement(new ObstacleView(270),id);break;
+            case "SpaceShip" :  id = ControllerForModel.getInstance().addElement("SpaceShip"); 
+                                        ControllerForView.getInstance().addElement(id,"SpaceShip");break;
+            case "Enemy" :  id = ControllerForModel.getInstance().addElement("Enemy"); 
+                                        ControllerForView.getInstance().addElement(id,"Enemy");break;
+            case "Enemy1" : id = ControllerForModel.getInstance().addElement("Enemy1"); 
+                                        ControllerForView.getInstance().addElement(id,"Enemy1");break;
+            case "Enemy2" : id = ControllerForModel.getInstance().addElement("Enemy2"); 
+                                        ControllerForView.getInstance().addElement(id,"Enemy2");break;
+            case "ProjectileDx" :   id = ControllerForModel.getInstance().addElement("ProjectileDx"); 
+                                        ControllerForView.getInstance().addElement(id,"ProjectileDx");break;
+            case "ProjectileSx" :   id = ControllerForModel.getInstance().addElement("ProjectileSx"); 
+                                        ControllerForView.getInstance().addElement(id,"ProjectileSx");break;
+            case "ProjectileSx1" :   id = ControllerForModel.getInstance().addElement("ProjectileSx1"); 
+                                        ControllerForView.getInstance().addElement(id,"ProjectileSx1");break;
+            case "Background" : id = ControllerForModel.getInstance().addElement("Background"); 
+                                        ControllerForView.getInstance().addElement(id,"Background");break;
+            case "Obstacle0" :  id = ControllerForModel.getInstance().addElement("Obstacle0"); 
+                                        ControllerForView.getInstance().addElement(id,"Obstacle0");break;
+            case "Obstacle140" :    id = ControllerForModel.getInstance().addElement("Obstacle140"); 
+                                        ControllerForView.getInstance().addElement(id,"Obstacle140");break;
+            case "Obstacle270" :    id = ControllerForModel.getInstance().addElement("Obstacle270"); 
+                                        ControllerForView.getInstance().addElement(id,"Obstacle270");break;
         }
         return id;
     }
+    @Override
     public void removeViewElementById(int id){
-        View.getInstance().getElementById(id).remove();
-        View.getInstance().removeElementById(id);
+        ControllerForView.getInstance().removeViewElementById(id);
     }
+
+    @Override
 
     public void GameOver() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    @Override
     public void startFlicker(int id){
-        View.getInstance().getElementById(id).startFlicker();
+        ControllerForView.getInstance().startFlicker(id);
     }
+    @Override
     public void stopFlicker(int id){
-        View.getInstance().getElementById(id).stopFlicker();
+        ControllerForView.getInstance().stopFlicker(id);
     }
+    @Override
     public void score(){
-        Player.getInstance().score();
-        StatusBar.getInstance().score();
+        ControllerForModel.getInstance().score();
+        ControllerForView.getInstance().score();
     }
+    @Override
     public void start(){
         timer.start();
     }
+    @Override
+
     public void stop(){
         timer.stop();
     }
+    @Override
     public void gameLoop(){
         levelTimer();
-        Model.getInstance().toDo();
-        View.getInstance().toDo();
+        ControllerForModel.getInstance().toDo();
+        ControllerForView.getInstance().toDo();
     }
+    @Override
     public void collide(int id){
-        Model.getInstance().getElementById(id).getDamage();
+        ControllerForModel.getInstance().collide(id);
     }
+    @Override
     public void levelTimer(){
-        int i = Player.getInstance().getLevel();
-        switch(i){
-            case 1: Level1.getInstance().levelTime();break;
-            case 2: Level2.getInstance().levelTime();break;
-            case 3: Level3.getInstance().levelTime();break;
-        }
+        int i = ControllerForModel.getInstance().getLevel();
+        ControllerForView.getInstance().levelTimer(i);
     }
+    @Override
     public void setLevel(int i){
-        Player.getInstance().setLevel(i);
+        ControllerForModel.getInstance().setLevel(i);
     }
+    @Override
     public int getLevel(){
-        return Player.getInstance().getLevel();
+        return ControllerForModel.getInstance().getLevel();
     }
 
+    @Override
     public void removeHeart() {
-        StatusBar.getInstance().removeLife();
+        ControllerForView.getInstance().removeLife();
     }
 }
 

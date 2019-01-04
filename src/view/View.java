@@ -71,4 +71,19 @@ public class View implements IView{
     public void setSound() {
         sound = !sound;
     }
+
+    @Override
+    public void levelTime(int i) {
+        switch(i){
+            case 1: Level1.getInstance().levelTime();break;
+            case 2: Level2.getInstance().levelTime();break;
+            case 3: Level3.getInstance().levelTime();break;
+        }
+    }
+
+    @Override
+    public void removeLife() {
+        StatusBar.getInstance().removeLife();
+    }
+    
 }

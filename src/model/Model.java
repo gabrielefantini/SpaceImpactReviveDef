@@ -37,4 +37,20 @@ public class Model implements IModel{
         for(int i = 0; i<array.size(); i++)
             array.get(i).loop();
     }
+
+    @Override
+    public void score() {
+        Player.getInstance().score();
+    }
+
+    @Override
+    public int getLevel() {
+        return Player.getInstance().getLevel();
+    }
+
+    @Override
+    public void setLevel(int i) {
+        Player.getInstance().setLevel(i);
+    }
+    
 }

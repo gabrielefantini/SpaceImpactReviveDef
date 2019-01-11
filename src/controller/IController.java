@@ -20,8 +20,13 @@ public interface IController{
     public void collide(int id);
     public void levelTimer();
     public void setLevel(int i);
-    public int getLevel();
     public void removeHeart();
     public void setName(String name);
     public String getName();
+    public void setSpaceShip(int n);
+    public int getCurrentLevel();
+    public int getCurrentLife();
+    public void setLife(int n);
+
+    public int getLevel();
 }

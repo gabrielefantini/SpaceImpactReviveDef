@@ -49,4 +49,7 @@ public class Player {
     public void setLevel(int i){
         level = i;
     }
+    public void setLife(int n){
+        life = n;
+    }
 }

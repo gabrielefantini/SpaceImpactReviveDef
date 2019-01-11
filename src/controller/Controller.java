@@ -102,8 +102,8 @@ public class Controller implements IController{
         ControllerForModel.getInstance().setLevel(i);
     }
     @Override
-    public int getLevel(){
-        return ControllerForModel.getInstance().getLevel();
+    public int getCurrentLevel(){
+        return ControllerForModel.getInstance().getCurrentLevel();
     }
 
     @Override
@@ -119,6 +119,24 @@ public class Controller implements IController{
     @Override
     public String getName() {
         return ControllerForModel.getInstance().getName();
+    }
+
+    @Override
+    public void setSpaceShip(int n) {
+        ControllerForModel.getInstance().setSpaceShip(n);
+    }
+    @Override
+    public int getCurrentLife(){
+        return ControllerForModel.getInstance().getCurrentLife();
+    }
+    @Override
+    public void setLife(int n){
+        ControllerForModel.getInstance().setLife(n);
+    }
+
+    @Override
+    public int getLevel() {
+        return ControllerForModel.getInstance().getLevel();
     }
 }
 

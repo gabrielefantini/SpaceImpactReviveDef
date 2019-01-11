@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import utils.Config;
+
 
 
 /**
@@ -32,13 +32,20 @@ public class FXMLControllerMenuIniziale implements Initializable{
             Window.getInstance().menuLivelli();
         }
         public void continueGame(){
-            int level = Config.getInstance().getCurrentLevel();
+            int level = Controller.getInstance().getCurrentLevel();
             Controller.getInstance().setLevel(level);
+
             Window.getInstance().gameWindow();
+            
             switch(level) {
                 case 1 : Level1.getInstance();break;
                 case 2 : Level2.getInstance();break;
                 case 3 : Level3.getInstance();break;
+            }
+            
+            switch (Controller.getInstance().getCurrentLife()){
+                case 2 : Controller.getInstance().setLife(2);Controller.getInstance().removeHeart();break;
+                case 1 :Controller.getInstance().setLife(1); Controller.getInstance().removeHeart();Controller.getInstance().removeHeart();break;
             }
         }
         public void selectShip(){

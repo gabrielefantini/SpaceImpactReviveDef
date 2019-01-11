@@ -26,4 +26,26 @@ public interface IControllerForModel {
     public void setName(String name);
      
     public String getName();
+    
+    public void setSpaceShip(int n);
+    
+    public void setTime(int time);
+    
+    public int getTime();
+    
+    public int getSpaceShip();
+    
+    public int getCurrentLevel();
+    
+    public void setCurrentLevel(int n);
+    
+    public int getCurrentLife();
+    
+    public void setCurrentLife(int n);
+    
+    public int getCurrentScore();
+    
+    public void setCurrentScore(int n);
+    
+    public void setLife(int n);
 }

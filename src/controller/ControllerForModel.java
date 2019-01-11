@@ -5,6 +5,10 @@
  */
 package controller;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import utils.Config;
 import model.BackgroundModel;
 import model.Enemy1Model;
 import model.Enemy2Model;
@@ -84,5 +88,63 @@ public class ControllerForModel implements IControllerForModel{
         return Player.getInstance().getName();
     }
 
+    @Override
+    public void setSpaceShip(int n) {
+        try {
+            Config.getInstance().setSpaceShip(n);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerForModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+
+    @Override
+    public void setTime(int time) {
+        Config.getInstance().setTime(time);
+    }
+
+    @Override
+    public int getTime() {
+        return Config.getInstance().getTime();
+    }
+
+    @Override
+    public int getSpaceShip() {
+        return Config.getInstance().getSpaceShip();
+    }
+
+    @Override
+    public int getCurrentLevel() {
+        return Config.getInstance().getCurrentLevel();
+    }
+
+    @Override
+    public void setCurrentLevel(int n) {
+        Config.getInstance().setCurrentLevel(n);
+    }
+
+    @Override
+    public int getCurrentLife() {
+        return Config.getInstance().getCurrentLife();
+    }
+
+    @Override
+    public void setCurrentLife(int n) {
+        Config.getInstance().setCurrentLife(n);
+    }
+
+    @Override
+    public int getCurrentScore() {
+        return Config.getInstance().getCurrentScore();
+    }
+
+    @Override
+    public void setCurrentScore(int n) {
+        Config.getInstance().setCurrentScore(n);
+    }
+    @Override
+    public void setLife(int n){
+        Player.getInstance().setLife(n);
+    }
     
 }

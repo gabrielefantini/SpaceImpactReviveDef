@@ -29,9 +29,9 @@ public interface IControllerForModel {
     
     public void setSpaceShip(int n);
     
-    public void setTime(int time);
+    public void setCurrentTime(int time);
     
-    public int getTime();
+    public int getCurrentTime();
     
     public int getSpaceShip();
     
@@ -48,4 +48,10 @@ public interface IControllerForModel {
     public void setCurrentScore(int n);
     
     public void setLife(int n);
+    
+    public int getLife();
+    
+    public void setPlayerName();
+
+    public String getCurrentName();
 }

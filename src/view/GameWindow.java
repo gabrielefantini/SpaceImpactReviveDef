@@ -63,4 +63,8 @@ public class GameWindow {
         }
         StatusBar.getInstance().gameOver();
     }
+    public void close(){
+        instance = null;
+        primaryStage.hide();
+    }
 }

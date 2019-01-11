@@ -32,9 +32,10 @@ public class FXMLMenuPiccoloController implements Initializable {
     }
 
     public void SalvaEdEsci(){
-        
-    }
-    public void SalvaEMenuIniziale(){
-        
+        Controller.getInstance().setCurrentLevel(Controller.getInstance().getLevel());
+        Controller.getInstance().setCurrentLife(Controller.getInstance().getLife());
+        Controller.getInstance().setCurrentTime(Controller.getInstance().getLevelTimer());
+        Controller.getInstance().setPlayerName();
+        System.exit(0);
     }
 }

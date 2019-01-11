@@ -45,9 +45,10 @@ public class Config {
         out.close();
     }
     
-    public void setTime(int time){
+    public void setTime(int time) throws IOException{
         String t = Integer.toString(time);
         this.properties.setProperty("Time",t);
+        save();
     }
     public int getTime(){
         return Integer.valueOf(this.properties.getProperty("Time"));
@@ -63,23 +64,34 @@ public class Config {
     public int getCurrentLevel(){
         return Integer.valueOf(this.properties.getProperty("Level"));
     }
-    public void setCurrentLevel(int n){
+    public void setCurrentLevel(int n) throws IOException{
         String number = Integer.toString(n);
         this.properties.setProperty("Level", number);
+        save();
     }
     public int getCurrentLife(){
         return Integer.valueOf(this.properties.getProperty("Life"));
     }
-    public void setCurrentLife(int n){
+    public void setCurrentLife(int n) throws IOException{
         String number = Integer.toString(n);
-        this.properties.setProperty("Score", number);
+        this.properties.setProperty("Life", number);
+        save();
     }
     public int getCurrentScore(){
         return Integer.valueOf(this.properties.getProperty("Level"));
     }
-    public void setCurrentScore(int n){
+    public void setCurrentScore(int n) throws IOException{
         String number = Integer.toString(n);
         this.properties.setProperty("Score", number);
+        save();
     }
+    public void setPlayerName(String name) throws IOException{
+        this.properties.setProperty("Player", name);
+        save();
+    }
+    public String getCurrentName(){
+        return this.properties.getProperty("Player");
+    }
+
 }
 

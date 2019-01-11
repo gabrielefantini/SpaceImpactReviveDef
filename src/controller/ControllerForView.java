@@ -9,6 +9,9 @@ import view.BackgroundView;
 import view.Enemy1View;
 import view.Enemy2View;
 import view.EnemyView;
+import view.Level1;
+import view.Level2;
+import view.Level3;
 import view.ObstacleView;
 import view.ProjectileDxView;
 import view.ProjectileSxView;
@@ -78,5 +81,24 @@ public class ControllerForView implements IControllerForView{
     public void removeViewElementById(int id){
         View.getInstance().getElementById(id).remove();
         View.getInstance().removeElementById(id);
+    }
+
+    @Override
+    public int getLevelTimer() {
+        switch(Controller.getInstance().getLevel()){
+            case 1 : return Level1.getInstance().getLevelTime();
+            case 2 : return Level2.getInstance().getLevelTime();
+            case 3 : return Level3.getInstance().getLevelTime();
+        }
+        return 0;
+    }
+
+    @Override
+    public void setLevelTimer(int t) {
+        switch(Controller.getInstance().getLevel()){
+            case 1 : Level1.getInstance().setTime(t);break;
+            case 2 : Level2.getInstance().setTime(t);break;
+            case 3 : Level3.getInstance().setTime(t);break;
+        }
     }
 }

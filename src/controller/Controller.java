@@ -98,6 +98,10 @@ public class Controller implements IController{
         ControllerForView.getInstance().levelTimer(i);
     }
     @Override
+    public void setLevelTimer(int t){
+        ControllerForView.getInstance().setLevelTimer(t);
+    }
+    @Override
     public void setLevel(int i){
         ControllerForModel.getInstance().setLevel(i);
     }
@@ -133,10 +137,45 @@ public class Controller implements IController{
     public void setLife(int n){
         ControllerForModel.getInstance().setLife(n);
     }
-
+    @Override
+    public int getLife(){
+        return ControllerForModel.getInstance().getLife();
+    }
     @Override
     public int getLevel() {
         return ControllerForModel.getInstance().getLevel();
+    }
+    @Override
+    public void setCurrentLevel(int n){
+        ControllerForModel.getInstance().setCurrentLevel(n);
+    }
+    @Override
+    public void setCurrentLife(int n){
+        ControllerForModel.getInstance().setCurrentLife(n);
+    }
+
+    @Override
+    public int getLevelTimer() {
+        return ControllerForView.getInstance().getLevelTimer();
+    }
+
+    @Override
+    public void setCurrentTime(int levelTimer) {
+        ControllerForModel.getInstance().setCurrentTime(levelTimer);
+    }
+    @Override
+    public int getCurrentTime() {
+        return ControllerForModel.getInstance().getCurrentTime();
+    }
+
+    @Override
+    public void setPlayerName() {
+        ControllerForModel.getInstance().setPlayerName();
+    }
+
+    @Override
+    public String getCurrentName() {
+        return ControllerForModel.getInstance().getCurrentName();
     }
 }
 

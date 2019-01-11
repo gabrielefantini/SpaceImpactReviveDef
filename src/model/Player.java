@@ -52,4 +52,7 @@ public class Player {
     public void setLife(int n){
         life = n;
     }
+    public int getLife(){
+       return life;
+    }
 }

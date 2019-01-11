@@ -32,9 +32,10 @@ public class FXMLControllerMenuIniziale implements Initializable{
             Window.getInstance().menuLivelli();
         }
         public void continueGame(){
+            Controller.getInstance().setName(Controller.getInstance().getCurrentName());
             int level = Controller.getInstance().getCurrentLevel();
             Controller.getInstance().setLevel(level);
-
+            Controller.getInstance().setLevelTimer(Controller.getInstance().getCurrentTime());
             Window.getInstance().gameWindow();
             
             switch(level) {
@@ -47,6 +48,7 @@ public class FXMLControllerMenuIniziale implements Initializable{
                 case 2 : Controller.getInstance().setLife(2);Controller.getInstance().removeHeart();break;
                 case 1 :Controller.getInstance().setLife(1); Controller.getInstance().removeHeart();Controller.getInstance().removeHeart();break;
             }
+           
         }
         public void selectShip(){
             Window.getInstance().menuNavicella();

@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" style="" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FXMLMenuPiccoloController">
+<AnchorPane id="AnchorPane" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" style="" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXMLMenuPiccoloController">
   <children>
     <ImageView id="menuPiccolo.png" fitHeight="427.0" fitWidth="810.0" layoutX="0.0" layoutY="0.0">
       <image>
-        <Image url="@../img/menuPiccolo.png" preserveRatio="true" smooth="true" />
+        <Image preserveRatio="true" smooth="true" url="@../img/menuPiccolo.png" />
       </image>
     </ImageView>
     <Pane layoutX="9.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.0000999999975" style="">
@@ -25,7 +25,6 @@
               </font>
             </Button>
             <Button font="$x1" layoutX="248.0" layoutY="167.0" mnemonicParsing="false" onAction="#SalvaEdEsci" prefHeight="66.0" prefWidth="296.0" text="Salva ed Esci" />
-            <Button font="$x1" layoutX="248.0" layoutY="282.0" mnemonicParsing="false" onAction="#SalvaEMenuIniziale" prefHeight="66.0" prefWidth="296.0" text="Salva e Torna al Menu iniziale" />
           </children>
         </AnchorPane>
       </children>

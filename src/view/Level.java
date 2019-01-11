@@ -31,7 +31,9 @@ public abstract class Level {
     public void levelTime(){
         timer++;
     }
-
+    public int getLevelTime(){
+        return timer;
+    }
     public void obstacleBarrier(){
         Controller.getInstance().addElement("Obstacle0");
         Controller.getInstance().addElement("Obstacle140");

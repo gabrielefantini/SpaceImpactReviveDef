@@ -26,4 +26,8 @@ public interface IControllerForView {
     public void startFlicker(int id);
 
     public void stopFlicker(int id);
+    
+    public int getLevelTimer();
+    
+    public void setLevelTimer(int t);
 }

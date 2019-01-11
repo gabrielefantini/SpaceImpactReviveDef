@@ -99,12 +99,16 @@ public class ControllerForModel implements IControllerForModel{
     
 
     @Override
-    public void setTime(int time) {
-        Config.getInstance().setTime(time);
+    public void setCurrentTime(int time) {
+        try {
+            Config.getInstance().setTime(time);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerForModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
-    public int getTime() {
+    public int getCurrentTime() {
         return Config.getInstance().getTime();
     }
 
@@ -120,7 +124,11 @@ public class ControllerForModel implements IControllerForModel{
 
     @Override
     public void setCurrentLevel(int n) {
-        Config.getInstance().setCurrentLevel(n);
+        try {
+            Config.getInstance().setCurrentLevel(n);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerForModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -130,7 +138,11 @@ public class ControllerForModel implements IControllerForModel{
 
     @Override
     public void setCurrentLife(int n) {
-        Config.getInstance().setCurrentLife(n);
+        try {
+            Config.getInstance().setCurrentLife(n);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerForModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -140,11 +152,33 @@ public class ControllerForModel implements IControllerForModel{
 
     @Override
     public void setCurrentScore(int n) {
-        Config.getInstance().setCurrentScore(n);
+        try {
+            Config.getInstance().setCurrentScore(n);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerForModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     @Override
     public void setLife(int n){
         Player.getInstance().setLife(n);
+    }
+    @Override
+    public int getLife(){
+        return Player.getInstance().getLife();
+    }
+
+    @Override
+    public void setPlayerName() {
+        try {
+            Config.getInstance().setPlayerName(Controller.getInstance().getName());
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerForModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public String getCurrentName() {
+        return Config.getInstance().getCurrentName();
     }
     
 }

@@ -18,7 +18,8 @@ public interface IController{
     public void stop();
     public void gameLoop();
     public void collide(int id);
-    public void levelTimer();
+    public void levelTimer();    
+    public int getLevel();
     public void setLevel(int i);
     public void removeHeart();
     public void setName(String name);
@@ -27,6 +28,14 @@ public interface IController{
     public int getCurrentLevel();
     public int getCurrentLife();
     public void setLife(int n);
+    public void setCurrentLevel(int level);
+    public int getLife();
+    public void setCurrentLife(int n);
+    public int getLevelTimer();
+    public void setLevelTimer(int t);
+    public void setCurrentTime(int levelTimer);
+    public int getCurrentTime();
+    public void setPlayerName();
 
-    public int getLevel();
+    public String getCurrentName();
 }

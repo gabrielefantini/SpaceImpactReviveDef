@@ -8,6 +8,7 @@ package view;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import utils.Config;
 
 /**
  * FXML Controller class
@@ -23,7 +24,15 @@ public class FXMLMenuNavicellaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
     }
-    
+    public void selectSpaceShip1(){
+        Config.getInstance().setSpaceShip(1);
+    }
+    public void selectSpaceShip2(){
+        Config.getInstance().setSpaceShip(2);
+    }
+    public void selectSpaceShip3(){
+        Config.getInstance().setSpaceShip(3);
+    }
     public void goBack(){
         Window.getInstance().menuIniziale();
     }

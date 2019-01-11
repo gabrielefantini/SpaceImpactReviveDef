@@ -9,6 +9,7 @@ package view;
 import javafx.scene.media.AudioClip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import utils.Config;
 
 /**
  *
@@ -20,9 +21,16 @@ public class SpaceShipView extends GameView{
     public SpaceShipView(){ 
         super();
         type = "SpaceShip";
+        int n = Config.getInstance().getSpaceShip();
         try {
-            this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal1.png"));
-            this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker1.png"));
+            switch(n){
+                case 1 :this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal1.png"));
+                        this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker1.png"));break;
+                case 2 : this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal2.png"));
+                        this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker2.png"));break;
+                case 3 :this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal3.png"));
+                        this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker3.png"));break;
+            }
             this.imageDisplayed = new ImageView(imageNormal);
             fireSound = new AudioClip(SpaceShipView.class.getResource("/audio/laser10.wav").toString());
         } catch (Exception e) {

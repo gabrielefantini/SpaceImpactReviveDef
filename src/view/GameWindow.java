@@ -5,13 +5,10 @@
  */
 package view;
 
-import controller.Controller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -22,14 +19,12 @@ public class GameWindow {
     private static GameWindow instance = null;
     private Stage primaryStage;
     private BorderPane window;
-    private Space space;
-    private StatusBar statusBar;
     public static boolean UP,DOWN,LEFT,RIGHT,FIRE;
     
     private GameWindow(){
         window = new BorderPane();      
-        window.setTop(statusBar.getInstance());
-        window.setCenter(space.getInstance());
+        window.setTop(StatusBar.getInstance());
+        window.setCenter(Space.getInstance());
 
         Scene scene = new Scene(window,800,428);
         

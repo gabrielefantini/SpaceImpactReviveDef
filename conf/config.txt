@@ -1,0 +1,31 @@
+#--------------------------------+
+#   SpaceImpactRevive configuration file   |
+#--------------------------------+
+
+
+# SpaceShip Selected
+SpaceShip = 1
+
+# CurrentLevel
+Level = 1
+
+# CurrentLife
+Life = 3
+
+# CurrentScore
+CurrentScore = 0
+
+# LevelTime
+Time = 0
+
+# Top 5
+Payer1 = sconosciuto
+Score1 = 0
+Payer2 = sconosciuto
+Score2 = 0
+Payer3 = sconosciuto
+Score3 = 0
+Payer4 = sconosciuto
+Score4 = 0
+Payer5 = sconosciuto
+Score5 = 0

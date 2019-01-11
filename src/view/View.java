@@ -20,26 +20,30 @@ public class View implements IView{
     private boolean sound;
     
     private View(){
-        array = new ArrayList<GameView>();
+        array = new ArrayList<>();
         sound = true;
     }
     public static IView getInstance(){
         if(instance==null)instance=new View();
         return instance;
     }
+    @Override
     public void addElement(GameView x, int id){
         array.add(x);
         x.setHashId(id);
     }
+    @Override
     public GameView getElementById(int hashId){
         for(int i = 0; i<array.size(); i++)
             if(array.get(i).getHashId()==hashId)return array.get(i);
         return null;
     }
+    @Override
     public void removeElementById(int hashId){
         for(int i = 0; i<array.size(); i++)
             if(array.get(i).getHashId()==hashId)array.remove(i);
     }
+    @Override
     public void toDo() {
         for(int i = 0; i<array.size(); i++){
             array.get(i).setSound(sound);
@@ -54,6 +58,7 @@ public class View implements IView{
             }
         }
     }
+    @Override
     public void collisionCheck(GameView a, GameView b){
         if(a.intersect(b) && !a.getType().equals(b.getType()) && !a.getType().equals("Background") && !b.getType().equals("Background")){
             a.collide();
@@ -68,6 +73,7 @@ public class View implements IView{
         }
     }
 
+    @Override
     public void setSound() {
         sound = !sound;
     }

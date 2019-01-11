@@ -11,6 +11,7 @@ import model.Enemy2Model;
 import model.EnemyModel;
 import model.Model;
 import model.ObstacleModel;
+import model.Player;
 import model.ProjectileDxModel;
 import model.ProjectileSxModel;
 import model.SpaceShipModel;
@@ -42,11 +43,14 @@ public class ControllerForModel implements IControllerForModel{
         Model.getInstance().getElementById(id).getDamage();
     }
     public void levelTimer(){
-        int i = Model.getInstance().getLevel();
+        Model.getInstance().getLevel();
     }
+    @Override
     public void setLevel(int i){
         Model.getInstance().setLevel(i);
     }
+    
+    @Override
     public int getLevel(){
         return Model.getInstance().getLevel();
     }
@@ -68,6 +72,16 @@ public class ControllerForModel implements IControllerForModel{
             case "Obstacle270" :    id = Model.getInstance().addElement(new ObstacleModel());break; 
         }
         return id;
+    }
+
+    @Override
+    public void setName(String name) {
+        Player.getInstance().setName(name);
+    }
+
+    @Override
+    public String getName() {
+        return Player.getInstance().getName();
     }
 
     

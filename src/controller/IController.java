@@ -22,4 +22,6 @@ public interface IController{
     public void setLevel(int i);
     public int getLevel();
     public void removeHeart();
+    public void setName(String name);
+    public String getName();
 }

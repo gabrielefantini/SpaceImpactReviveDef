@@ -5,11 +5,13 @@
  */
 package view;
 
+import controller.Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import utils.Config;
 
 
 /**
@@ -30,7 +32,14 @@ public class FXMLControllerMenuIniziale implements Initializable{
             Window.getInstance().menuLivelli();
         }
         public void continueGame(){
-            System.out.println("continua gioco");
+            int level = Config.getInstance().getCurrentLevel();
+            Controller.getInstance().setLevel(level);
+            Window.getInstance().gameWindow();
+            switch(level) {
+                case 1 : Level1.getInstance();break;
+                case 2 : Level2.getInstance();break;
+                case 3 : Level3.getInstance();break;
+            }
         }
         public void selectShip(){
             Window.getInstance().menuNavicella();

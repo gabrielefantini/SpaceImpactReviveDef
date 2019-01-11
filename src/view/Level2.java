@@ -18,7 +18,6 @@ public class Level2 extends Level {
     private static Level2 instance = null;
     protected Level2(){
         super();
-        Controller.getInstance().setLevel(2);
     }
     public static Level2 getInstance() {
         if(instance == null)instance = new Level2();

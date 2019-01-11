@@ -56,10 +56,10 @@ public class StatusBar extends GridPane{
         playerName.setMinWidth(100);
         playerName.setMaxWidth(100);
         position = 4;
-        this.setMargin(menu,new Insets(0, 5,0,5));
-        this.setMargin(audio, new Insets(0,5,0,0));
-        this.setMargin(playerName,  new Insets(0,295,0,5));
-        this.setMargin(score,new Insets(0,50,0,0));
+        StatusBar.setMargin(menu,new Insets(0, 5,0,5));
+        StatusBar.setMargin(audio, new Insets(0,5,0,0));
+        StatusBar.setMargin(playerName,  new Insets(0,295,0,5));
+        StatusBar.setMargin(score,new Insets(0,50,0,0));
         playerName.setFont(Font.font ("Arial"));
         
     }

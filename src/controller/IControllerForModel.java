@@ -22,4 +22,8 @@ public interface IControllerForModel {
     public void setLevel(int i);
     
     public int addElement(String type);
+    
+    public void setName(String name);
+     
+    public String getName();
 }

@@ -16,16 +16,18 @@ public class Model implements IModel{
     private ArrayList<GameModel> array;
     
     private Model(){
-        array = new ArrayList<GameModel>();
+        array = new ArrayList<>();
     }
     public static IModel getInstance(){
         if(instance==null)instance=new Model();
         return instance;
     }
+    @Override
     public int addElement(GameModel x){
         array.add(x);
         return x.getHashId();
     }
+    @Override
     public GameModel getElementById(int hashId){
         for(int i = 0; i<array.size(); i++)
             if(array.get(i).getHashId()==hashId)return array.get(i);

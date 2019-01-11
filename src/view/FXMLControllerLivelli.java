@@ -6,6 +6,7 @@
  */
 package view;
 
+import controller.Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -13,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-import model.Player;
 
 /**
  *
@@ -36,27 +36,27 @@ public class FXMLControllerLivelli implements Initializable{
     }
     
     public void selectLevel1(){
+       Controller.getInstance().setLevel(1);
        Window.getInstance().gameWindow();
-       Player.getInstance().setLevel(1);
        Level1.getInstance();
     }
     public void selectLevel2(){
+        Controller.getInstance().setLevel(2);
         Window.getInstance().gameWindow();
-        Player.getInstance().setLevel(2);
         Level2.getInstance();
     }
-    public void selectLevel3(){        
+    public void selectLevel3(){ 
+        Controller.getInstance().setLevel(3);
         Window.getInstance().gameWindow();
-        Player.getInstance().setLevel(3);
         Level3.getInstance();
     }
     public void setPlayerName(){
         String name = playerName.getText();
         if(name.length()>=20)name = name.substring(0, 19);
         if(name.equals(""))name="Sconosciuto";
-        Player.getInstance().setName(name);
-        text.setText(Player.getInstance().getName());
-        System.out.println(Player.getInstance().getName());
+        Controller.getInstance().setName(name);
+        text.setText(Controller.getInstance().getName());
+        System.out.println(Controller.getInstance().getName());
     }
     
 }

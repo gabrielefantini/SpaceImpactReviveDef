@@ -110,5 +110,15 @@ public class Controller implements IController{
     public void removeHeart() {
         ControllerForView.getInstance().removeLife();
     }
+
+    @Override
+    public void setName(String name) {
+        ControllerForModel.getInstance().setName(name);
+    }
+
+    @Override
+    public String getName() {
+        return ControllerForModel.getInstance().getName();
+    }
 }
 

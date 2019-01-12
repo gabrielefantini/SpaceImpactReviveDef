@@ -8,22 +8,19 @@ package view;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-
 /**
  *
- * @author gabri
+ * @author gabriele fantini
  */
-public class Bonus1View extends BonusView{
-    
-    public Bonus1View() {
+public class Bonus2View extends BonusView{
+    public Bonus2View() {
         super();
-        type = "Bonus1";
-        this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/bonus1.png"));
+        type = "Bonus2";
+        this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/bonus2.png"));
         this.imageDisplayed = new ImageView(imageNormal);
         Space.getInstance().getChildren().add(imageDisplayed);
-        imageDisplayed.relocate(800,100);
+        imageDisplayed.relocate(800,200);
     }
-    
     @Override
     public void animationLoop(){
         int c=1;
@@ -32,5 +29,4 @@ public class Bonus1View extends BonusView{
         imageDisplayed.relocate(x,y);
     }
 
-    
 }

@@ -35,7 +35,13 @@ public class FXMLControllerMenuIniziale implements Initializable{
             Controller.getInstance().setName(Controller.getInstance().getCurrentName());
             int level = Controller.getInstance().getCurrentLevel();
             Controller.getInstance().setLevel(level);
-            Controller.getInstance().setLevelTimer(Controller.getInstance().getCurrentTime());
+            
+            int t = Controller.getInstance().getCurrentTime();
+            if(t<200)
+                Controller.getInstance().setLevelTimer(t);
+                else
+                    Controller.getInstance().setLevelTimer(t-200);
+            
             Window.getInstance().gameWindow();
             
             switch(level) {
@@ -47,6 +53,7 @@ public class FXMLControllerMenuIniziale implements Initializable{
             switch (Controller.getInstance().getCurrentLife()){
                 case 2 : Controller.getInstance().setLife(2);Controller.getInstance().removeHeart();break;
                 case 1 :Controller.getInstance().setLife(1); Controller.getInstance().removeHeart();Controller.getInstance().removeHeart();break;
+                case 0 :Controller.getInstance().setLife(0);Controller.getInstance().GameOver();break;
             }
             Controller.getInstance().setScore(Controller.getInstance().getCurrentScore());
         }

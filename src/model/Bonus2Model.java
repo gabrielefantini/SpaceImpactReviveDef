@@ -5,17 +5,17 @@
  */
 package model;
 
-import model.GameModel;
-
 /**
  *
- * @author gabri
+ * @author gabriele fantini
  */
-public class BonusModel extends GameModel{
-    public BonusModel(){
+public class Bonus2Model extends BonusModel{
+    public Bonus2Model(){
         super();
         life = 1;
         IMMUNITY = 0;
-        type = "Bonus";
+        type = "Bonus2";
     }
+    
 }
+

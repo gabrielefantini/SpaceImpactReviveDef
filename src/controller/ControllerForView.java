@@ -6,6 +6,7 @@
 package controller;
 
 import view.BackgroundView;
+import view.Bonus1View;
 import view.Enemy1View;
 import view.Enemy2View;
 import view.EnemyView;
@@ -52,9 +53,6 @@ public class ControllerForView implements IControllerForView{
     public void levelTimer(int i){
         View.getInstance().levelTime(i);
     }
-    public void removeHeart() {
-        View.getInstance().removeLife();
-    }
 
     @Override
     public void removeLife() {
@@ -75,6 +73,7 @@ public class ControllerForView implements IControllerForView{
             case "Obstacle0" : View.getInstance().addElement(new ObstacleView(0),id);break;
             case "Obstacle140" :View.getInstance().addElement(new ObstacleView(140),id);break;
             case "Obstacle270" :View.getInstance().addElement(new ObstacleView(270),id);break;
+            case "Bonus1" :View.getInstance().addElement(new Bonus1View(),id);break;
         }
     }
     @Override
@@ -105,5 +104,10 @@ public class ControllerForView implements IControllerForView{
     @Override
     public void setScore(int score) {
         StatusBar.getInstance().setScore(score);
+    }
+
+    @Override
+    public void addLife() {
+        View.getInstance().addLife();
     }
 }

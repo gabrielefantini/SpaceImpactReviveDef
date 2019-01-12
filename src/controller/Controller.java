@@ -47,6 +47,8 @@ public class Controller implements IController{
                                         ControllerForView.getInstance().addElement(id,"Obstacle140");break;
             case "Obstacle270" :    id = ControllerForModel.getInstance().addElement("Obstacle270"); 
                                         ControllerForView.getInstance().addElement(id,"Obstacle270");break;
+            case "Bonus1" :  id = ControllerForModel.getInstance().addElement("Bonus1"); 
+                                        ControllerForView.getInstance().addElement(id,"Bonus1");break;
         }
         return id;
     }
@@ -58,7 +60,7 @@ public class Controller implements IController{
     @Override
 
     public void GameOver() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Controller.getInstance().stop();
     }
     @Override
     public void startFlicker(int id){
@@ -112,6 +114,10 @@ public class Controller implements IController{
     @Override
     public int getLife(){
         return ControllerForModel.getInstance().getLife();
+    }
+    @Override
+    public void addLife(){
+        ControllerForView.getInstance().addLife();
     }
     @Override
     public int getLevel() {

@@ -2,6 +2,34 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/Enemy1View.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/Bonus1View.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/GameModel.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/ProjectileView.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/ControllerForModel.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/ControllerForView.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/Player.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/IControllerForView.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/Level1.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/ProjectileDxModel.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/Bonus2Model.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/BonusView.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/StatusBar.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/View.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/GameView.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/SpaceShipModel.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/Enemy1Model.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/Controller.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/Level3.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/FXMLMenuPiccoloController.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/IController.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/Bonus2View.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/Model.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/FXMLControllerMenuIniziale.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/Bonus1Model.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/BonusModel.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/IView.java</file>
+        </group>
     </open-files>
 </project-private>

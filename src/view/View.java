@@ -48,6 +48,7 @@ public class View implements IView{
         for(int i = 0; i<array.size(); i++){
             array.get(i).setSound(sound);
             array.get(i).loop();
+            array.get(i).outOfSpace();
         }
         for(int i = 0; i < array.size(); i++){
             GameView g = array.get(i);
@@ -60,6 +61,11 @@ public class View implements IView{
     }
     @Override
     public void collisionCheck(GameView a, GameView b){
+        if(a.intersect(b) && !a.getType().equals(b.getType()) && (a.getType().equals("Bonus1") || b.getType().equals("Bonus1")||a.getType().equals("Bonus2") || b.getType().equals("Bonus2"))&& !a.getType().equals("Background") && !b.getType().equals("Background")){
+            if(a.getType().equals("Bonus1")||a.getType().equals("Bonus2"))a.collide();
+            if(b.getType().equals("Bonus1")||b.getType().equals("Bonus2"))b.collide();
+            return;
+        }
         if(a.intersect(b) && !a.getType().equals(b.getType()) && !a.getType().equals("Background") && !b.getType().equals("Background")){
             a.collide();
             b.collide();
@@ -90,6 +96,9 @@ public class View implements IView{
     @Override
     public void removeLife() {
         StatusBar.getInstance().removeLife();
+    }
+    public void addLife(){
+        StatusBar.getInstance().addLife();
     }
     
 }

@@ -11,8 +11,7 @@ import controller.Controller;
 public class SpaceShipModel extends GameModel{
     public SpaceShipModel(){
         super();
-        life = 3;
-        IMMUNITY = 300;
+        IMMUNITY = 100;
         type = "SpaceShip";        
         System.out.println("model.SpaceShipModel.<init>()");
     }
@@ -22,8 +21,7 @@ public class SpaceShipModel extends GameModel{
             return;
         }
         else{
-            if(life > 0){                            
-                life--;
+            if(Player.getInstance().getLife() > 0){                            
                 Player.getInstance().removeLife();
                 Controller.getInstance().removeHeart();
                 immunity = IMMUNITY;

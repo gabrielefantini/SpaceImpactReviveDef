@@ -41,7 +41,7 @@ public class GameView implements IGameView{
 
     @Override
     public void outOfSpace() {
-        if(this.imageDisplayed.getBoundsInParent().getMaxX()<=-20 || this.imageDisplayed.getBoundsInParent().getMinX()>=820){
+        if(this.imageDisplayed.getBoundsInParent().getMaxX()<=-100 || this.imageDisplayed.getBoundsInParent().getMinX()>=820){
             this.remove();
             View.getInstance().removeElementById(hashId);
         }

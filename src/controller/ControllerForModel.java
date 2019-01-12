@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.Config;
 import model.BackgroundModel;
+import model.Bonus1Model;
 import model.Enemy1Model;
 import model.Enemy2Model;
 import model.EnemyModel;
@@ -74,6 +75,7 @@ public class ControllerForModel implements IControllerForModel{
             case "Obstacle0" :  id = Model.getInstance().addElement(new ObstacleModel());break; 
             case "Obstacle140" :    id = Model.getInstance().addElement(new ObstacleModel());break; 
             case "Obstacle270" :    id = Model.getInstance().addElement(new ObstacleModel());break; 
+            case "Bonus1" :    id = Model.getInstance().addElement(new Bonus1Model());break; 
         }
         return id;
     }

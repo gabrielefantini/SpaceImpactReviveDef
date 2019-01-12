@@ -16,6 +16,8 @@ public interface IControllerForView {
     public void toDo();
 
     public void removeLife();
+    
+    public void addLife();
 
     public void levelTimer(int i);
     

@@ -23,6 +23,7 @@ public class GameModel implements IGameModel{
         immunity=0;
     }
 
+    @Override
     public void getDamage(){
        if(immunity > 0){
             return;
@@ -35,29 +36,36 @@ public class GameModel implements IGameModel{
             die();
         } 
     }
+    @Override
     public void addLife(){
         life++;
     } 
+    @Override
     public int getLife() {
         return life;
     }
+    @Override
     public void immunityTimer(){
         if(immunity>0)immunity--;
     }
+    @Override
     public boolean flicker(){
         if(immunity>0)return true;
         else
             return false;
     }
 
+    @Override
     public int getHashId() {
         return this.hashCode();
     }
 
+    @Override
     public void die() {
         Controller.getInstance().removeViewElementById(this.getHashId());
     }
 
+    @Override
     public void loop() {
         immunityTimer();
     }

@@ -30,6 +30,7 @@ public interface IController{
     public void setLife(int n);
     public void setCurrentLevel(int level);
     public int getLife();
+    public void addLife();
     public void setCurrentLife(int n);
     public int getLevelTimer();
     public void setLevelTimer(int t);

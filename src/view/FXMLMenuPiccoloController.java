@@ -28,7 +28,7 @@ public class FXMLMenuPiccoloController implements Initializable {
     }    
     public void Riassumi(){
         Window.getInstance().gameWindow();
-        Controller.getInstance().start();
+        if(Controller.getInstance().getLife()!=0)Controller.getInstance().start();
     }
 
     public void SalvaEdEsci(){

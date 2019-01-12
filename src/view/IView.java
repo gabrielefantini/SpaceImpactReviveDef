@@ -18,4 +18,5 @@ public interface IView {
     public void setSound();
     public void levelTime(int i);
     public void removeLife();
+    public void addLife();
 }

@@ -100,5 +100,11 @@ public class View implements IView{
     public void addLife(){
         StatusBar.getInstance().addLife();
     }
+    public void setRateo(int r){
+        for(int i = 0; i <array.size(); i++){
+            GameView g = array.get(i);
+            if(g.getType().equals("SpaceShip"))g.setRateo(r);
+        }
+    }
     
 }

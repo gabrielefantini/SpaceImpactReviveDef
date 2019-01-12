@@ -30,7 +30,7 @@ public class Level1 extends Level {
         if(timer == 100){
             Controller.getInstance().addElement("Enemy1");
         }
-        if(timer==400)Controller.getInstance().addElement("Bonus1");
+        if(timer==300)Controller.getInstance().addElement("Bonus2");
         if(timer==700)Controller.getInstance().addElement("Enemy");
         if(timer==1000)Controller.getInstance().addElement("Enemy1");
         if(timer==1500)Controller.getInstance().addElement("Enemy2");

@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import utils.Config;
 import model.BackgroundModel;
 import model.Bonus1Model;
+import model.Bonus2Model;
 import model.Enemy1Model;
 import model.Enemy2Model;
 import model.EnemyModel;
@@ -76,6 +77,7 @@ public class ControllerForModel implements IControllerForModel{
             case "Obstacle140" :    id = Model.getInstance().addElement(new ObstacleModel());break; 
             case "Obstacle270" :    id = Model.getInstance().addElement(new ObstacleModel());break; 
             case "Bonus1" :    id = Model.getInstance().addElement(new Bonus1Model());break; 
+            case "Bonus2" :    id = Model.getInstance().addElement(new Bonus2Model());break; 
         }
         return id;
     }
@@ -192,5 +194,5 @@ public class ControllerForModel implements IControllerForModel{
     public void setScore(int score) {
         Player.getInstance().setScore(score);
     }
-    
+
 }

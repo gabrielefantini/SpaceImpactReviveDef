@@ -5,6 +5,8 @@
  */
 package model;
 
+import controller.Controller;
+
 /**
  *
  * @author gabriele fantini
@@ -16,6 +18,10 @@ public class Bonus2Model extends BonusModel{
         IMMUNITY = 0;
         type = "Bonus2";
     }
-    
+    @Override
+    public void die() {
+        Controller.getInstance().setRateo(3);
+        Controller.getInstance().removeViewElementById(this.getHashId());
+    }
 }
 

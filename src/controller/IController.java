@@ -42,4 +42,6 @@ public interface IController{
     public void setCurrentScore(int score);
     public int getScore();
     public void setScore(int score);
+
+    public void setRateo(int i);
 }

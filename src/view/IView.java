@@ -19,4 +19,6 @@ public interface IView {
     public void levelTime(int i);
     public void removeLife();
     public void addLife();
+
+    public void setRateo(int i);
 }

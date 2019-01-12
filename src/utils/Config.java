@@ -92,6 +92,21 @@ public class Config {
     public String getCurrentName(){
         return this.properties.getProperty("Player");
     }
+    public int getPlayerScore(int n){
+        String b = Integer.toString(n);
+        return Integer.valueOf(this.properties.getProperty("Score" + b));
+    }
+    public String getPlayerName(int n){
+        String b = Integer.toString(n);
+        for(int i = 1; i<6; i++)System.out.println(this.properties.getProperty("Player"+i));
+        return this.properties.getProperty("Player" + b);
+    }
 
+    public void setScore(int currentScore, int i,String name) {
+        String b = Integer.toString(i);
+        String f = Integer.toString(currentScore);
+        this.properties.setProperty("Score"+b, f);
+        this.properties.setProperty("Player"+b, name);
+    }
 }
 

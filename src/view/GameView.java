@@ -27,7 +27,7 @@ public class GameView implements IGameView{
     private int hashId;
     protected String type;
     protected boolean flicker;
-    
+
     public GameView(){
         a=0;b=0;
         flicker = false;
@@ -168,5 +168,7 @@ public class GameView implements IGameView{
     @Override
     public void collide(){
         Controller.getInstance().collide(this.hashId);
+    }
+    public void setRateo(int x){
     }
 }

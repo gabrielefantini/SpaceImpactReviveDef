@@ -18,6 +18,7 @@ import utils.Config;
 public class SpaceShipView extends GameView{
     private int rateo;
     private int RATEO;
+    private int timer;
     public SpaceShipView(){ 
         super();
         type = "SpaceShip";
@@ -39,6 +40,7 @@ public class SpaceShipView extends GameView{
         Space.getInstance().getChildren().add(imageDisplayed);
         rateo = 0;
         RATEO=10;
+        timer = 0;
     }
     @Override
     public void animationLoop(){
@@ -50,11 +52,17 @@ public class SpaceShipView extends GameView{
         if(GameWindow.RIGHT) dx +=2;
         if(GameWindow.FIRE && rateo == 0){fire(1);if(sound)fireSound.play(0.8); rateo = RATEO;} 
         if(rateo>0)rateo--;
+        if(timer>0)timer--;
+        if(timer == 0)RATEO = 10;
         moveElementBy(dx,dy);
         if(flicker)flicker();
         
     }
+    @Override
     public void setRateo(int x){
         RATEO = x;
+        timer = 600;
+        System.out.println("view.GameView.setRateo()");
     }
+    
 }

@@ -49,6 +49,8 @@ public class Controller implements IController{
                                         ControllerForView.getInstance().addElement(id,"Obstacle270");break;
             case "Bonus1" :  id = ControllerForModel.getInstance().addElement("Bonus1"); 
                                         ControllerForView.getInstance().addElement(id,"Bonus1");break;
+            case "Bonus2" :  id = ControllerForModel.getInstance().addElement("Bonus2"); 
+                                        ControllerForView.getInstance().addElement(id,"Bonus2");break;
         }
         return id;
     }
@@ -202,6 +204,11 @@ public class Controller implements IController{
     @Override
     public int getCurrentScore(){
         return ControllerForModel.getInstance().getCurrentScore();
+    }
+
+    @Override
+    public void setRateo(int i) {
+        ControllerForView.getInstance().setRateo(i);
     }
 }
 

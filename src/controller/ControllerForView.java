@@ -7,6 +7,7 @@ package controller;
 
 import view.BackgroundView;
 import view.Bonus1View;
+import view.Bonus2View;
 import view.Enemy1View;
 import view.Enemy2View;
 import view.EnemyView;
@@ -74,6 +75,7 @@ public class ControllerForView implements IControllerForView{
             case "Obstacle140" :View.getInstance().addElement(new ObstacleView(140),id);break;
             case "Obstacle270" :View.getInstance().addElement(new ObstacleView(270),id);break;
             case "Bonus1" :View.getInstance().addElement(new Bonus1View(),id);break;
+            case "Bonus2" :View.getInstance().addElement(new Bonus2View(),id);break;
         }
     }
     @Override
@@ -109,5 +111,10 @@ public class ControllerForView implements IControllerForView{
     @Override
     public void addLife() {
         View.getInstance().addLife();
+    }
+
+    @Override
+    public void setRateo(int i) {
+        View.getInstance().setRateo(i);
     }
 }

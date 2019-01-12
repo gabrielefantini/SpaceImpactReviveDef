@@ -105,11 +105,19 @@ public class Controller implements IController{
     public void setLevel(int i){
         ControllerForModel.getInstance().setLevel(i);
     }
-    @Override
-    public int getCurrentLevel(){
-        return ControllerForModel.getInstance().getCurrentLevel();
+     @Override
+    public void setLife(int n){
+        ControllerForModel.getInstance().setLife(n);
     }
-
+    @Override
+    public int getLife(){
+        return ControllerForModel.getInstance().getLife();
+    }
+    @Override
+    public int getLevel() {
+        return ControllerForModel.getInstance().getLevel();
+    }
+  
     @Override
     public void removeHeart() {
         ControllerForView.getInstance().removeLife();
@@ -124,6 +132,25 @@ public class Controller implements IController{
     public String getName() {
         return ControllerForModel.getInstance().getName();
     }
+    @Override
+    public int getLevelTimer() {
+        return ControllerForView.getInstance().getLevelTimer();
+    }
+    @Override
+    public int getScore(){
+        return ControllerForModel.getInstance().getScore();
+    }
+    @Override
+    public void setScore(int score){
+        ControllerForView.getInstance().setScore(score);
+        ControllerForModel.getInstance().setScore(score);
+    }
+    //metodi per il salvataggio e il caricamento del gioco
+    
+    @Override
+    public int getCurrentLevel(){
+        return ControllerForModel.getInstance().getCurrentLevel();
+    }
 
     @Override
     public void setSpaceShip(int n) {
@@ -133,18 +160,7 @@ public class Controller implements IController{
     public int getCurrentLife(){
         return ControllerForModel.getInstance().getCurrentLife();
     }
-    @Override
-    public void setLife(int n){
-        ControllerForModel.getInstance().setLife(n);
-    }
-    @Override
-    public int getLife(){
-        return ControllerForModel.getInstance().getLife();
-    }
-    @Override
-    public int getLevel() {
-        return ControllerForModel.getInstance().getLevel();
-    }
+   
     @Override
     public void setCurrentLevel(int n){
         ControllerForModel.getInstance().setCurrentLevel(n);
@@ -152,11 +168,6 @@ public class Controller implements IController{
     @Override
     public void setCurrentLife(int n){
         ControllerForModel.getInstance().setCurrentLife(n);
-    }
-
-    @Override
-    public int getLevelTimer() {
-        return ControllerForView.getInstance().getLevelTimer();
     }
 
     @Override
@@ -176,6 +187,15 @@ public class Controller implements IController{
     @Override
     public String getCurrentName() {
         return ControllerForModel.getInstance().getCurrentName();
+    }
+    
+    @Override
+    public void setCurrentScore(int score){
+        ControllerForModel.getInstance().setCurrentScore(score);
+    }
+    @Override
+    public int getCurrentScore(){
+        return ControllerForModel.getInstance().getCurrentScore();
     }
 }
 

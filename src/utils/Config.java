@@ -78,11 +78,11 @@ public class Config {
         save();
     }
     public int getCurrentScore(){
-        return Integer.valueOf(this.properties.getProperty("Level"));
+        return Integer.valueOf(this.properties.getProperty("CurrentScore"));
     }
     public void setCurrentScore(int n) throws IOException{
         String number = Integer.toString(n);
-        this.properties.setProperty("Score", number);
+        this.properties.setProperty("CurrentScore", number);
         save();
     }
     public void setPlayerName(String name) throws IOException{

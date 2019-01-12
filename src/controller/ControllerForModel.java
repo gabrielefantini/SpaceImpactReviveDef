@@ -180,5 +180,15 @@ public class ControllerForModel implements IControllerForModel{
     public String getCurrentName() {
         return Config.getInstance().getCurrentName();
     }
+
+    @Override
+    public int getScore() {
+        return Player.getInstance().getScore();
+    }
+
+    @Override
+    public void setScore(int score) {
+        Player.getInstance().setScore(score);
+    }
     
 }

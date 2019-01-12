@@ -55,4 +55,8 @@ public class Player {
     public int getLife(){
        return life;
     }
+
+    public void setScore(int n) {
+        score = n;
+    }
 }

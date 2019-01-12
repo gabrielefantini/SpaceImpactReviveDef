@@ -36,6 +36,9 @@ public interface IController{
     public void setCurrentTime(int levelTimer);
     public int getCurrentTime();
     public void setPlayerName();
-
     public String getCurrentName();
+    public int getCurrentScore();
+    public void setCurrentScore(int score);
+    public int getScore();
+    public void setScore(int score);
 }

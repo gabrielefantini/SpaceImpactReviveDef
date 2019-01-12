@@ -48,7 +48,7 @@ public class FXMLControllerMenuIniziale implements Initializable{
                 case 2 : Controller.getInstance().setLife(2);Controller.getInstance().removeHeart();break;
                 case 1 :Controller.getInstance().setLife(1); Controller.getInstance().removeHeart();Controller.getInstance().removeHeart();break;
             }
-           
+            Controller.getInstance().setScore(Controller.getInstance().getCurrentScore());
         }
         public void selectShip(){
             Window.getInstance().menuNavicella();

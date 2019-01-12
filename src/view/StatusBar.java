@@ -92,4 +92,8 @@ public class StatusBar extends GridPane{
     public void gameOver(){
         this.menu.setDisable(true);
     }
+    public void setScore(int n){
+        punteggio = n;
+        score.setText("Score: "+punteggio+" ");
+    }
 }

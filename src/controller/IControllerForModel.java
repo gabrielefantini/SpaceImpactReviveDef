@@ -54,4 +54,8 @@ public interface IControllerForModel {
     public void setPlayerName();
 
     public String getCurrentName();
+
+    public int getScore();
+
+    public void setScore(int score);
 }

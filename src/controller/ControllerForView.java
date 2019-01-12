@@ -101,4 +101,9 @@ public class ControllerForView implements IControllerForView{
             case 3 : Level3.getInstance().setTime(t);break;
         }
     }
+
+    @Override
+    public void setScore(int score) {
+        StatusBar.getInstance().setScore(score);
+    }
 }

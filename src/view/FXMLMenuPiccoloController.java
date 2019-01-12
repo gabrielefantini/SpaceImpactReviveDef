@@ -36,6 +36,10 @@ public class FXMLMenuPiccoloController implements Initializable {
         Controller.getInstance().setCurrentLife(Controller.getInstance().getLife());
         Controller.getInstance().setCurrentTime(Controller.getInstance().getLevelTimer());
         Controller.getInstance().setPlayerName();
+        Controller.getInstance().setCurrentScore(Controller.getInstance().getScore());
+        System.exit(0);
+    }
+    public void Esci(){
         System.exit(0);
     }
 }

@@ -30,4 +30,6 @@ public interface IControllerForView {
     public int getLevelTimer();
     
     public void setLevelTimer(int t);
+
+    public void setScore(int score);
 }

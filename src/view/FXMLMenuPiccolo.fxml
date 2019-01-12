@@ -25,6 +25,7 @@
               </font>
             </Button>
             <Button font="$x1" layoutX="248.0" layoutY="167.0" mnemonicParsing="false" onAction="#SalvaEdEsci" prefHeight="66.0" prefWidth="296.0" text="Salva ed Esci" />
+                  <Button font="$x1" layoutX="253.0" layoutY="277.0" mnemonicParsing="false" onAction="#Esci" prefHeight="66.0" prefWidth="296.0" text="Esci Senza Salvare" />
           </children>
         </AnchorPane>
       </children>

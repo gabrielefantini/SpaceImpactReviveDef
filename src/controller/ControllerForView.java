@@ -20,6 +20,7 @@ import view.ProjectileSxView;
 import view.SpaceShipView;
 import view.StatusBar;
 import view.View;
+import view.Window;
 
 /**
  *
@@ -116,5 +117,10 @@ public class ControllerForView implements IControllerForView{
     @Override
     public void setRateo(int i) {
         View.getInstance().setRateo(i);
+    }
+
+    @Override
+    public void menuPiccolo() {
+        Window.getInstance().menuPiccolo();
     }
 }

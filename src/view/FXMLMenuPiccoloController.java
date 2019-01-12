@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -18,7 +19,8 @@ import javafx.scene.control.Button;
  * @author gabri
  */
 public class FXMLMenuPiccoloController implements Initializable {
-
+    @FXML
+    private Text text;
     @FXML
     private Button button;
     
@@ -41,5 +43,12 @@ public class FXMLMenuPiccoloController implements Initializable {
     }
     public void Esci(){
         System.exit(0);
+    }
+    public void setPlayerStatus(){
+        String status;
+        if(Controller.getInstance().PlayerStatus())status = "You Win";
+        else status = "You Loose";
+        
+        text.setText(status);
     }
 }

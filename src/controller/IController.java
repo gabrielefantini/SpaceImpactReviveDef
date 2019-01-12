@@ -8,40 +8,58 @@ package controller;
 
 
 public interface IController{
+    
+    //metodi per la gestione degli elementi del gioco
     public int addElement(String type);
     public void removeViewElementById(int id);
-    public void GameOver();
     public void startFlicker(int id);
     public void stopFlicker(int id);
+    public void collide(int id);
+    
+    //metodi per la gestione della partita
+    public void GameOver();
+    public void win();
     public void score();
+    public void setName(String name);
+    public String getName();
+    public void removeHeart();
+    public void setLife(int n);
+    public int getLife();
+    public void addLife();//parte grafica
+    public void setPlayerName();
+    public int getScore();
+    public void setScore(int score);
+    public void setRateo(int i);
+    public boolean PlayerStatus();
+    
+    //metodi per la gestione dei loop
     public void start();
     public void stop();
     public void gameLoop();
-    public void collide(int id);
+    
+    //metodi per la gestione del livello
+
     public void levelTimer();    
     public int getLevel();
     public void setLevel(int i);
-    public void removeHeart();
-    public void setName(String name);
-    public String getName();
+    
+    //metodi per il salvataggio
     public void setSpaceShip(int n);
-    public int getCurrentLevel();
-    public int getCurrentLife();
-    public void setLife(int n);
     public void setCurrentLevel(int level);
-    public int getLife();
-    public void addLife();
     public void setCurrentLife(int n);
-    public int getLevelTimer();
     public void setLevelTimer(int t);
     public void setCurrentTime(int levelTimer);
+    public void setCurrentScore(int score);
+    
+    //metodi per il caricamento
+    public int getCurrentLevel();
+    public int getCurrentLife();
+    public int getLevelTimer();
     public int getCurrentTime();
-    public void setPlayerName();
     public String getCurrentName();
     public int getCurrentScore();
-    public void setCurrentScore(int score);
-    public int getScore();
-    public void setScore(int score);
 
-    public void setRateo(int i);
+    
+   
+
 }

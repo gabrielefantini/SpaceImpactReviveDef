@@ -195,4 +195,19 @@ public class ControllerForModel implements IControllerForModel{
         Player.getInstance().setScore(score);
     }
 
+    @Override
+    public void GameOver() {
+        Player.getInstance().GameOver();
+    }
+
+    @Override
+    public void win() {
+        Player.getInstance().win();
+    }
+
+    @Override
+    public boolean PlayerStatus() {
+        return Player.getInstance().getStatus();
+    }
+    
 }

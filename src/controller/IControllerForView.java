@@ -36,4 +36,6 @@ public interface IControllerForView {
     public void setScore(int score);
 
     public void setRateo(int i);
+
+    public void menuPiccolo();
 }

@@ -58,4 +58,10 @@ public interface IControllerForModel {
     public int getScore();
 
     public void setScore(int score);
+
+    public void GameOver();
+
+    public void win();
+    
+    public boolean PlayerStatus();
 }

@@ -12,6 +12,7 @@ import controller.Controller;
  * @author gabri
  */
 public class Player {
+    private boolean win;
     private int level;
     private int life;
     private int score;
@@ -58,5 +59,15 @@ public class Player {
 
     public void setScore(int n) {
         score = n;
+    }
+    public void GameOver(){
+        win = false;
+    }
+    public void win(){
+        win = true;
+    }
+
+    public boolean getStatus() {
+        return win;
     }
 }

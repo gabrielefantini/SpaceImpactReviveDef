@@ -60,9 +60,16 @@ public class Controller implements IController{
     }
 
     @Override
-
     public void GameOver() {
         Controller.getInstance().stop();
+        ControllerForModel.getInstance().GameOver();
+        ControllerForView.getInstance().menuPiccolo();
+    }
+    @Override
+    public void win() {
+        Controller.getInstance().stop();
+        ControllerForModel.getInstance().win();
+        ControllerForView.getInstance().menuPiccolo();
     }
     @Override
     public void startFlicker(int id){
@@ -209,6 +216,11 @@ public class Controller implements IController{
     @Override
     public void setRateo(int i) {
         ControllerForView.getInstance().setRateo(i);
+    }
+    
+    @Override
+    public boolean PlayerStatus(){
+        return ControllerForModel.getInstance().PlayerStatus();
     }
 }
 

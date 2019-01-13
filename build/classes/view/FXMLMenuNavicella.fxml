@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXMLMenuNavicellaController">
+  <children>
+    <Button layoutX="345.0" layoutY="61.0" mnemonicParsing="false" onAction="#selectSpaceShip1" prefHeight="46.0" prefWidth="169.0" text="Millennium Falcon">
+      <font>
+        <Font name="Arial" size="16.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Button font="$x1" layoutX="345.0" layoutY="141.0" mnemonicParsing="false" onAction="#selectSpaceShip2" prefHeight="46.0" prefWidth="111.0" text="Enterprise" />
+    <Button font="$x1" layoutX="345.0" layoutY="224.0" mnemonicParsing="false" onAction="#selectSpaceShip3" prefHeight="46.0" prefWidth="111.0" text="Daedalus" />
+    <Button font="$x1" layoutX="280.0" layoutY="324.0" mnemonicParsing="false" onAction="#goBack" prefHeight="46.0" prefWidth="241.0" text="Indietro" />
+
+    <ImageView id="SpaceShipNormal1.png" layoutX="180.0" layoutY="47.0">
+      <image>
+        <Image preserveRatio="true" smooth="true" url="@../img/SpaceShipNormal1.png" />
+      </image>
+    </ImageView>
+    <ImageView id="SpaceShipNormal2.png" layoutX="500.0" layoutY="130.0">
+      <image>
+        <Image preserveRatio="true" smooth="true" url="@../img/SpaceShipNormal2.png" />
+      </image>
+    </ImageView>
+    <ImageView id="SpaceShipNormal3.png" layoutX="127.0" layoutY="204.0">
+      <image>
+        <Image preserveRatio="true" smooth="true" url="@../img/SpaceShipNormal3.png" />
+      </image>
+    </ImageView>
+  </children>
+</AnchorPane>

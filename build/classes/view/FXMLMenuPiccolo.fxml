@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" style="" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXMLMenuPiccoloController">
+  <children>
+    <ImageView id="menuPiccolo.png" fitHeight="427.0" fitWidth="810.0" layoutX="0.0" layoutY="0.0">
+      <image>
+        <Image preserveRatio="true" smooth="true" url="@../img/menuPiccolo.png" />
+      </image>
+    </ImageView>
+    <Pane layoutX="9.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.0000999999975" style="">
+      <children>
+        <AnchorPane layoutX="-4.0" layoutY="0.0" prefHeight="400.0" prefWidth="800.999977929685" style="">
+          <children>
+            <Button blendMode="SRC_OVER" cache="true" cacheHint="DEFAULT" cancelButton="false" defaultButton="false" layoutX="248.0" layoutY="134.0" mnemonicParsing="false" onAction="#Riassumi" prefHeight="66.0" prefWidth="296.0" text="Riassumi">
+              <font>
+                <Font name="Arial" size="16.0" fx:id="x1" />
+              </font>
+            </Button>
+            <Button font="$x1" layoutX="248.0" layoutY="217.0" mnemonicParsing="false" onAction="#SalvaEdEsci" prefHeight="66.0" prefWidth="296.0" text="Salva ed Esci" />
+                  <Button font="$x1" layoutX="248.0" layoutY="307.0" mnemonicParsing="false" onAction="#Esci" prefHeight="66.0" prefWidth="296.0" text="Esci Senza Salvare" />
+                  <Text fx:id="text" fill="RED" layoutX="236.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="320.13671875">
+                     <font>
+                        <Font name="Serif Regular" size="40.0" />
+                     </font>
+                  </Text>
+          </children>
+        </AnchorPane>
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

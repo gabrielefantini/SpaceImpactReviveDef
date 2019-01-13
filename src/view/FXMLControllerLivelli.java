@@ -56,7 +56,6 @@ public class FXMLControllerLivelli implements Initializable{
         if(name.equals(""))name="Sconosciuto";
         Controller.getInstance().setName(name);
         text.setText(Controller.getInstance().getName());
-        System.out.println(Controller.getInstance().getName());
     }
     
 }

@@ -25,9 +25,7 @@ public class GameWindow {
         window = new BorderPane();      
         window.setTop(StatusBar.getInstance());
         window.setCenter(Space.getInstance());
-
         Scene scene = new Scene(window,800,428);
-        
         //event listener
         scene.setOnKeyPressed((KeyEvent event) -> {
             switch (event.getCode()) {
@@ -56,13 +54,7 @@ public class GameWindow {
         if(instance == null)instance = new GameWindow();
         return instance;
     }
-    public void GameOver(){
-        try {
-            window.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLGameOver.fxml")));
-        } catch (Exception e) {
-        }
-        StatusBar.getInstance().gameOver();
-    }
+    
     public void close(){
         instance = null;
         primaryStage.hide();

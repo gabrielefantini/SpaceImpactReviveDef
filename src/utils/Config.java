@@ -93,19 +93,12 @@ public class Config {
         return this.properties.getProperty("Player");
     }
 
-    public void setScore(int currentScore, int i,String name) {
-        String b = Integer.toString(i);
-        String f = Integer.toString(currentScore);
-        this.properties.setProperty("Score"+b, f);
-        this.properties.setProperty("Player"+b, name);
-    }
-
+   
     public String getTopPlayer() {
         return this.properties.getProperty("TopPlayer");
     }
 
     public String getTopScore() {
-        System.out.println(this.properties.getProperty("TopScore"));
         return this.properties.getProperty("TopScore");
     }
 

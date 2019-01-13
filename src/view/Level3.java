@@ -26,7 +26,6 @@ public class Level3 extends Level {
     @Override
     public void levelTime(){
         timer++;
-        System.out.println(timer);
         if(timer == 50)Controller.getInstance().addElement("Enemy1");
         if(timer == 250)Controller.getInstance().addElement("Bonus2");
         if(timer == 300)obstacleBarrier();

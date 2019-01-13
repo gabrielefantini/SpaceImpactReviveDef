@@ -43,7 +43,6 @@ public class BackgroundView extends GameView{
             case 3: imageNormal = new Image(BackgroundView.class.getResourceAsStream("/img/Background3.png"));break;
         }
         }catch(Exception e){
-            System.out.println("view.BackgroundView.setBackground()");
         }
     }
 }

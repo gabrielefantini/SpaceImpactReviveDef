@@ -19,10 +19,11 @@ public class EnemyView extends GameView{
     public EnemyView(){
         super();
         type ="Enemy";
-        this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/BigEnemy.png"));
-        this.imageDisplayed = new ImageView(imageNormal);
+        
         
         try {
+            this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/BigEnemy.png"));
+            this.imageDisplayed = new ImageView(imageNormal);
             fireSound = new AudioClip(EnemyView.class.getResource("/audio/bigLaserGun.wav").toString());
         } catch (Exception e) {
             System.out.println(e);

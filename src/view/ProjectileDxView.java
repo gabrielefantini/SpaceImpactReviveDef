@@ -17,7 +17,11 @@ public class ProjectileDxView extends GameView{
     public ProjectileDxView(){
         super();
         type = "ProjectileDx";
-        imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileDx.png"));
+        try {
+            imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileDx.png"));
+        } catch (Exception e) {
+        }
+        
         this.imageDisplayed = new ImageView(imageNormal);
         Space.getInstance().getChildren().add(imageDisplayed);
     }

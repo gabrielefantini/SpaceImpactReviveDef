@@ -23,10 +23,11 @@ public class Enemy2View extends EnemyView{
         a=300;
         b=0;
         
-        this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/enemy2.png"));
-        //this.imageFlicker = new Image(EnemyView.class.getResourceAsStream("/img/enemy2.png"));
-        this.imageDisplayed = new ImageView(imageNormal);
-        try {
+      
+        try { 
+            this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/enemy2.png"));
+            //this.imageFlicker = new Image(EnemyView.class.getResourceAsStream("/img/enemy2.png"));
+            this.imageDisplayed = new ImageView(imageNormal);
             fireSound = new AudioClip(EnemyView.class.getResource("/audio/littleLaserGun.wav").toString());
         } catch (Exception e) {
             System.out.println(e);

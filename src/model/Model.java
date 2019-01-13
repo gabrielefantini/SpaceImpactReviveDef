@@ -36,7 +36,6 @@ public class Model implements IModel{
 
     @Override
     public void toDo() {
-        System.out.println(Player.getInstance().getLife());
         for(int i = 0; i<array.size(); i++)
             array.get(i).loop();
     }

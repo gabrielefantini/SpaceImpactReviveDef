@@ -12,8 +12,7 @@ public class SpaceShipModel extends GameModel{
     public SpaceShipModel(){
         super();
         IMMUNITY = 100;
-        type = "SpaceShip";        
-        System.out.println("model.SpaceShipModel.<init>()");
+        type = "SpaceShip";
     }
     @Override
     public void getDamage(){

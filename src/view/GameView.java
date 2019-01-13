@@ -110,7 +110,7 @@ public class GameView implements IGameView{
             int id = Controller.getInstance().addElement("ProjectileDx");
             GameView p = View.getInstance().getElementById(id);
             p.set(x, y);
-            System.out.println("view.GameView.fire()");
+            
         }
         else{
             if(direction == -5){

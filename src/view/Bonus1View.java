@@ -18,7 +18,11 @@ public class Bonus1View extends BonusView{
     public Bonus1View() {
         super();
         type = "Bonus1";
-        this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/bonus1.png"));
+        try {
+            this.imageNormal = new Image(EnemyView.class.getResourceAsStream("/img/bonus1.png"));
+        } catch (Exception e) {
+        }
+        
         this.imageDisplayed = new ImageView(imageNormal);
         Space.getInstance().getChildren().add(imageDisplayed);
         imageDisplayed.relocate(800,100);

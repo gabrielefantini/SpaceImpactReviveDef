@@ -17,11 +17,19 @@ public class ProjectileSxView extends ProjectileView{
     public ProjectileSxView(int n){
         super();
         if(n==0){
-            imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileSx.png"));
+            try {
+                imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileSx.png"));
+            } catch (Exception e) {
+            }
+            
             type = "ProjectileSx";
         }
         if(n==1){
-            imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileSx1.png"));
+            try {
+                 imageNormal= new Image(ProjectileDxView.class.getResourceAsStream("/img/ProjectileSx1.png"));
+            } catch (Exception e) {
+            }
+           
             type = "ProjectileSx1";
         }
         this.imageDisplayed = new ImageView(imageNormal);

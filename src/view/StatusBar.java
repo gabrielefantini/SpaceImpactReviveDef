@@ -82,7 +82,6 @@ public class StatusBar extends GridPane{
         position--;
         for(int i=4; i<position; i++){
             this.add(new ImageView(heart),i,0);
-            System.out.println(i);
         }
     }
     public void score(){

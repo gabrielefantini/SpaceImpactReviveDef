@@ -24,6 +24,8 @@ public class SpaceShipView extends GameView{
         type = "SpaceShip";
         int n = Config.getInstance().getSpaceShip();
         try {
+            this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal1.png"));
+            this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker1.png"));
             switch(n){
                 case 1 :this.imageNormal = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipNormal1.png"));
                         this.imageFlicker = new Image(SpaceShipView.class.getResourceAsStream("/img/SpaceShipFlicker1.png"));break;
@@ -62,7 +64,6 @@ public class SpaceShipView extends GameView{
     public void setRateo(int x){
         RATEO = x;
         timer = 600;
-        System.out.println("view.GameView.setRateo()");
     }
     
 }

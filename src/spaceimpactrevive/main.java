@@ -8,6 +8,7 @@ package spaceimpactrevive;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import utils.Config;
 import view.Window;
 
 /**
@@ -20,6 +21,17 @@ public class main extends Application {
     public void start(Stage stage) throws Exception {
         Window.getInstance();
         Window.getInstance().menuIniziale();
+        if(Config.getInstance().getCurrentName()== null){
+            Config.getInstance().setCurrentLevel(0);
+            Config.getInstance().setCurrentLife(0);
+            Config.getInstance().setCurrentScore(0);
+            Config.getInstance().setPlayerName("Sconosciuto");
+            Config.getInstance().setTime(0);
+            Config.getInstance().setTopPlayer("Sconosciuto");
+            Config.getInstance().setTopScore("0");
+            Config.getInstance().setSpaceShip(1);
+        }
+            
     }
 
     public static void main(String[] args) {

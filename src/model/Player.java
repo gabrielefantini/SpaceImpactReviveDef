@@ -12,7 +12,7 @@ import controller.Controller;
  * @author gabri
  */
 public class Player {
-    private boolean win;
+    private int win;
     private int level;
     private int life;
     private int score;
@@ -20,6 +20,7 @@ public class Player {
     private static Player instance = null;
     
     private Player(){
+        win=0;
         name = "Sconosciuto";
         score = 0;
         life=3;
@@ -61,13 +62,13 @@ public class Player {
         score = n;
     }
     public void GameOver(){
-        win = false;
+        win = 2;
     }
     public void win(){
-        win = true;
+        win = 1;
     }
 
-    public boolean getStatus() {
+    public int getStatus() {
         return win;
     }
 }

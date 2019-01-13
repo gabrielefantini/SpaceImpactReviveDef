@@ -5,8 +5,14 @@
         <group>
             <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/Controller.java</file>
             <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/FXMLMenuPiccoloController.java</file>
-            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/ControllerForView.java</file>
-            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/Window.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/IController.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/utils/Config.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/model/Player.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/FXMLControllerMenuIniziale.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/Level1.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/ControllerForModel.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/controller/IControllerForModel.java</file>
+            <file>file:/C:/Users/gabriele%20fantini/Desktop/spaceimpactrevivedef/src/view/FXMLControllerLivelli.java</file>
         </group>
     </open-files>
 </project-private>

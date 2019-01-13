@@ -6,7 +6,7 @@
 package view;
 
 
-import java.io.IOException;import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -72,7 +72,6 @@ public class Window {
             primaryStage.show();
             this.root.getChildren().add(FXMLLoader.load(getClass().getResource("/view/FXMLMenuPiccolo.fxml")));
         } catch (Exception e) {
-            System.out.println("view.Window.menuPiccolo()");
         }
     }
     public void menuSettings(){

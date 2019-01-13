@@ -26,9 +26,9 @@
             </Button>
             <Button font="$x1" layoutX="248.0" layoutY="217.0" mnemonicParsing="false" onAction="#SalvaEdEsci" prefHeight="66.0" prefWidth="296.0" text="Salva ed Esci" />
                   <Button font="$x1" layoutX="248.0" layoutY="307.0" mnemonicParsing="false" onAction="#Esci" prefHeight="66.0" prefWidth="296.0" text="Esci Senza Salvare" />
-                  <Text fx:id="text" fill="RED" layoutX="311.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="196.13671875">
+                  <Text fx:id="text" fill="RED" layoutX="236.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="320.13671875">
                      <font>
-                        <Font size="64.0" />
+                        <Font name="Serif Regular" size="40.0" />
                      </font>
                   </Text>
           </children>

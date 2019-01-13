@@ -30,7 +30,7 @@ public interface IController{
     public int getScore();
     public void setScore(int score);
     public void setRateo(int i);
-    public boolean PlayerStatus();
+    public int PlayerStatus();
     
     //metodi per la gestione dei loop
     public void start();
@@ -50,6 +50,8 @@ public interface IController{
     public void setLevelTimer(int t);
     public void setCurrentTime(int levelTimer);
     public void setCurrentScore(int score);
+    public void setTopPlayer(String name);
+    public void setTopScore(int score);
     
     //metodi per il caricamento
     public int getCurrentLevel();
@@ -58,8 +60,8 @@ public interface IController{
     public int getCurrentTime();
     public String getCurrentName();
     public int getCurrentScore();
-
-    
+    public String getTopPlayer();
+    public String getTopScore();
    
 
 }

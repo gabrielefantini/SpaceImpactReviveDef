@@ -26,8 +26,8 @@ public class FXMLMenuPiccoloController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-    }    
+        setPlayerStatus();
+    }   
     public void Riassumi(){
         Window.getInstance().gameWindow();
         if(Controller.getInstance().getLife()!=0)Controller.getInstance().start();
@@ -45,10 +45,10 @@ public class FXMLMenuPiccoloController implements Initializable {
         System.exit(0);
     }
     public void setPlayerStatus(){
-        String status;
-        if(Controller.getInstance().PlayerStatus())status = "You Win";
-        else status = "You Loose";
-        
+        String status = null;
+        if(Controller.getInstance().PlayerStatus()==1)status = "You Win";
+        if(Controller.getInstance().PlayerStatus()==2)status = "You Loose";
+        if(Controller.getInstance().PlayerStatus()==0)status= "";
         text.setText(status);
     }
 }

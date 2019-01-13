@@ -70,6 +70,8 @@ public class Controller implements IController{
         Controller.getInstance().stop();
         ControllerForModel.getInstance().win();
         ControllerForView.getInstance().menuPiccolo();
+        Controller.getInstance().setTopPlayer(Controller.getInstance().getName());
+        Controller.getInstance().setTopScore(Controller.getInstance().getScore());
     }
     @Override
     public void startFlicker(int id){
@@ -219,8 +221,28 @@ public class Controller implements IController{
     }
     
     @Override
-    public boolean PlayerStatus(){
+    public int PlayerStatus(){
         return ControllerForModel.getInstance().PlayerStatus();
+    }
+
+    @Override
+    public String getTopPlayer() {
+        return ControllerForModel.getInstance().getTopPlayer();
+    }
+
+    @Override
+    public String getTopScore() {
+        return ControllerForModel.getInstance().getTopScore();
+    }
+
+    @Override
+    public void setTopPlayer(String name) {
+        ControllerForModel.getInstance().setTopPlayer(name);
+    }
+
+    @Override
+    public void setTopScore(int score) {
+        ControllerForModel.getInstance().setTopScore(score);
     }
 }
 

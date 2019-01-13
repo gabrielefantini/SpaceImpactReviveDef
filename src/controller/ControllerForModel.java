@@ -206,8 +206,41 @@ public class ControllerForModel implements IControllerForModel{
     }
 
     @Override
-    public boolean PlayerStatus() {
+    public int PlayerStatus() {
         return Player.getInstance().getStatus();
+    }
+
+    @Override
+    public String getTopPlayer() {
+        return Config.getInstance().getTopPlayer();
+    }
+
+    @Override
+    public String getTopScore() {
+        return Config.getInstance().getTopScore();
+    }
+
+    @Override
+    public void setTopPlayer(String name) {
+        int i = Integer.valueOf(Config.getInstance().getTopScore());
+        try {
+            if(i<Controller.getInstance().getScore())
+                Config.getInstance().setTopPlayer(name);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerForModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void setTopScore(int score) {
+        String s = Integer.toString(score);
+        int i = Integer.valueOf(Config.getInstance().getTopScore());
+        try {
+            if(i<Controller.getInstance().getScore())
+                Config.getInstance().setTopScore(s);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerForModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

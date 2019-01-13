@@ -38,7 +38,7 @@ public class Level1 extends Level {
         if(timer == 1500)Controller.getInstance().addElement("Obstacle270");
         if(timer == 2000)Controller.getInstance().addElement("Enemy");
         if(timer == 2500)Controller.getInstance().addElement("Enemy1");
-        if(timer == 3200)Controller.getInstance().win();
+        if(timer == 300)Controller.getInstance().win();
     }
 
 }

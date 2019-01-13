@@ -63,5 +63,13 @@ public interface IControllerForModel {
 
     public void win();
     
-    public boolean PlayerStatus();
+    public int PlayerStatus();
+
+    public String getTopPlayer();
+
+    public String getTopScore();
+
+    public void setTopPlayer(String name);
+
+    public void setTopScore(int score);
 }

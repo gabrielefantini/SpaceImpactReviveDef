@@ -28,6 +28,21 @@
             <Button font="$x1" layoutY="192.0" mnemonicParsing="false" onAction="#selectShip" prefHeight="50.0" prefWidth="171.0" text="Scegli Navicella" />
           </children>
         </AnchorPane>
+            <Text fx:id="topPlayer" fill="#ff0101" layoutX="315.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prova" textAlignment="CENTER" wrappingWidth="237.13671875">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="topScore" fill="RED" layoutX="552.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prova">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="178.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TopPlayer">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
       </children>
     </Pane>
   </children>

@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 
 
 
@@ -23,9 +24,15 @@ public class FXMLControllerMenuIniziale implements Initializable{
     @FXML
     private Button button;
     
+    @FXML
+    private Text topPlayer;
+    
+    @FXML
+    private Text topScore;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+        setTopPlayer();
     }
    
         public void startGame(){
@@ -62,6 +69,13 @@ public class FXMLControllerMenuIniziale implements Initializable{
         }
         public void records(){
             Window.getInstance().menuRecords();
+        }
+        
+        private void setTopPlayer(){
+            String topP = Controller.getInstance().getTopPlayer();
+            String topS = Controller.getInstance().getTopScore();
+            topPlayer.setText(topP);
+            topScore.setText(topS);
         }
     
 }

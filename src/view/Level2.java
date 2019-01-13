@@ -27,13 +27,35 @@ public class Level2 extends Level {
     public void levelTime(){
         timer++;
         System.out.println(timer);
-        if(timer==100){
+        if(timer == 100)Controller.getInstance().addElement("Bonus2");
+        if(timer==200){
             obstacleBarrier();
         }
-        if(timer == 600){
-            Controller.getInstance().addElement("Enemy2");
+        if(timer==300){
+            obstacleBarrier();
         }
-        if(timer==1400)Controller.getInstance().addElement("Enemy1");
-        //if(timer==200)SpaceImpactRevive.getInstance().stopBackground();
+        if(timer==400){
+            obstacleBarrier();
+        }
+        if(timer==500){
+            obstacleBarrier();
+        }
+        if(timer==900)Controller.getInstance().addElement("Enemy1");
+        if(timer==1400)Controller.getInstance().addElement("Enemy2");
+        if(timer == 1500){
+            Controller.getInstance().addElement("Obstacle0");
+            Controller.getInstance().addElement("Obstacle270");
+        }
+        if(timer == 1600)Controller.getInstance().addElement("Bonus1");
+        if(timer==2000)Controller.getInstance().addElement("Enemy");
+        if(timer==2400)Controller.getInstance().addElement("Enemy2");
+        if(timer == 2500){
+            Controller.getInstance().addElement("Obstacle0");
+            Controller.getInstance().addElement("Obstacle270");
+        }
+        if(timer == 2600)Controller.getInstance().addElement("Bonus1");
+        if(timer==3000)Controller.getInstance().addElement("Enemy");
+        if(timer == 3500)Controller.getInstance().win();
+        
     }
 }

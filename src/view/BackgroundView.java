@@ -27,9 +27,6 @@ public class BackgroundView extends GameView{
     }
 
     
-    public void stopBackground(){
-        c=0;
-    }
     @Override
     public void animationLoop(){
        
